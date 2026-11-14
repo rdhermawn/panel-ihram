@@ -43,7 +43,7 @@ class Home extends Controller
         return view('website.index', [
             'news' => News::orderBy('id', 'desc')
                 ->whereNotIn('category', ['download', 'guide'])
-                ->paginate(3),
+                ->paginate(4),
 
             'user' => new User(),
 
