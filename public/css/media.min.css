@@ -1,0 +1,358 @@
+@media(min-width: 1920px) {
+    .popUp_download {
+        align-items: center
+    }
+}
+
+@media(max-width: 1024px) {
+    .popUp_download .steps {
+        flex-wrap: wrap;
+        width: 90%;
+        margin-top: 3rem
+    }
+    .popUp_download .steps li {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        gap: 2rem
+    }
+    .popUp_download .downloads {
+        flex-wrap: wrap;
+        gap: 4rem;
+        width: 90%
+    }
+    .popUp_download .downloads .client {
+        padding: 0 !important;
+        border: none !important;
+        text-align: center;
+        width: 100%
+    }
+    .popUp_download .downloads .client h1 {
+        padding: 0 !important
+    }
+    .popUp_download .downloads .client ul {
+        padding: 0 !important;
+        border: none !important
+    }
+    .popUp_download .downloads .client ul li {
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 1rem
+    }
+    body {
+        background: url(../images/bg_mobile.webp) top/cover no-repeat;
+        background-color: #000
+    }
+    nav {
+        padding: 0 1rem
+    }
+    nav .withDropdown {
+        position: relative
+    }
+    nav .withDropdown:hover div:nth-child(1) {
+        color: #fff
+    }
+    nav .withDropdown:hover div:nth-child(2) {
+        opacity: 1;
+        padding-bottom: 0;
+        transform: scaleY(100%)
+    }
+    nav .withDropdown:hover div:nth-child(2) a {
+        color: rgba(255, 255, 255, .6)
+    }
+    nav .withDropdown.active div:nth-child(2) {
+        padding-bottom: 1.5rem !important
+    }
+    nav .withDropdown.active div:nth-child(2) a {
+        max-height: 2rem;
+        opacity: 1;
+        padding: 1rem 0 1rem 0 !important
+    }
+    nav .withDropdown::before {
+        display: none
+    }
+    nav .withDropdown div:nth-child(1) {
+        color: rgba(255, 255, 255, .6);
+        text-transform: uppercase;
+        font-weight: bold;
+        cursor: pointer;
+        transition: .5s;
+        letter-spacing: .05rem
+    }
+    nav .withDropdown div:nth-child(2) {
+        position: relative;
+        white-space: wrap;
+        top: 0;
+        border-radius: 0;
+        gap: 0rem;
+        text-align: center;
+        opacity: 1;
+        padding: 0 !important;
+        transform: scaleY(100%)
+    }
+    nav .withDropdown div:nth-child(2) a {
+        justify-content: center;
+        height: auto;
+        padding: 0 !important;
+        max-height: 0;
+        opacity: 0;
+        transition: .5s
+    }
+    nav .withDropdown div:nth-child(2)::after {
+        display: none
+    }
+    nav .container {
+        width: 100%;
+        flex-direction: row-reverse;
+        padding-right: 0
+    }
+    nav .container ul:nth-child(1) {
+        position: fixed;
+        flex-direction: column;
+        top: 6rem;
+        height: 100vh;
+        overflow-y: auto;
+        left: -20rem;
+        transition: .5s;
+        background-color: rgba(13, 11, 10, .95);
+        gap: 0;
+        width: 20rem;
+        opacity: 0
+    }
+    nav .container ul:nth-child(1) li {
+        height: auto;
+        border-top: .05rem solid rgba(255, 255, 255, .05);
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+    nav .container ul:nth-child(1) li::before {
+        display: none
+    }
+    nav .container ul:nth-child(1) li a {
+        padding: 1.5rem 0 1.5rem 0;
+        display: flex;
+        align-items: center
+    }
+    nav .container ul:nth-child(1) li div {
+        padding: 1.5rem 0 1.5rem 0
+    }
+    nav .container .mobile {
+        display: flex;
+        flex-direction: column;
+        gap: .3rem;
+        padding-left: 1.2rem;
+        z-index: 2
+    }
+    nav .container .mobile span {
+        width: 1.2rem;
+        height: .15rem;
+        display: flex;
+        background-color: #caba9a;
+        transition: .5s;
+        position: relative;
+        top: 0
+    }
+    nav .container .mobile.active span:nth-child(2) {
+        transform: translateX(3rem);
+        opacity: 0
+    }
+    nav .container .mobile.active span:nth-child(1) {
+        transform: rotate(45deg);
+        top: .5rem !important
+    }
+    nav .container .mobile.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        top: -0.4rem !important
+    }
+    nav .container .navM.active {
+        opacity: 1;
+        left: 0
+    }
+    .boxes {
+        margin-bottom: 14rem !important
+    }
+    .boxes_list .swiper-button-next {
+        right: 35% !important;
+        transform: translateY(16rem)
+    }
+    .boxes_list .swiper-button-prev {
+        left: 35% !important;
+        transform: translateY(16rem)
+    }
+    .floating_smoke {
+        display: none
+    }
+    .floating_items-header {
+        display: none
+    }
+    .floating_items-middle {
+        display: none
+    }
+    header {
+        padding-top: 6rem
+    }
+    header .container .wrapper {
+        width: 100%
+    }
+    header .container .wrapper .logo::before {
+        display: none
+    }
+    header .container .wrapper .logo img {
+        width: 20rem
+    }
+    header .container .wrapper .logo img:nth-child(2) {
+        display: none
+    }
+    html,
+    body {
+        overflow-x: hidden
+    }
+    footer .container {
+        flex-wrap: wrap;
+        padding-right: 0;
+        text-align: center;
+        justify-content: center
+    }
+    footer .container div:nth-child(1) {
+        align-items: center;
+        gap: 2rem
+    }
+    footer .container div:nth-child(1) .unsimple {
+        text-align: left
+    }
+    footer .container div:nth-child(2) {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        gap: 2rem;
+        margin-top: 4rem
+    }
+    main .container {
+        flex-direction: column-reverse;
+        align-items: center
+    }
+    main .promo_list {
+        flex-wrap: wrap
+    }
+    main .promo_list ul:nth-child(1) {
+        margin-bottom: 2rem
+    }
+    main .promo_list ul {
+        width: 100%;
+        height: auto
+    }
+    main .promo_list ul li {
+        width: 100% !important;
+        height: 15rem
+    }
+    main .promo_list ul li a div {
+        justify-content: center;
+        text-align: center
+    }
+    main .promo_list ul li a div span:nth-child(2) {
+        display: none
+    }
+    main .rating_list {
+        flex-wrap: wrap;
+        gap: 2rem;
+        position: relative;
+        display: none
+    }
+    main .rating_list.active {
+        display: flex
+    }
+    main .rating_list div {
+        width: 100%
+    }
+    main .rating_buttons {
+        flex-wrap: wrap;
+        margin-left: 0;
+        justify-content: center;
+        gap: 1.2rem;
+        position: relative;
+        z-index: 2
+    }
+    main .content_title {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+    main .content_title div:nth-child(1) {
+        margin-right: 0
+    }
+    main .content_title div:nth-child(1) a {
+        margin: 0 auto 1rem auto
+    }
+    main .content_title div:nth-child(2) {
+        display: none
+    }
+    main .streams {
+        margin-bottom: 13rem
+    }
+    main .streams_list .swiper-button-next {
+        right: 35% !important;
+        transform: translateY(10rem)
+    }
+    main .streams_list .swiper-button-prev {
+        left: 35% !important;
+        transform: translateY(10rem)
+    }
+    main .step {
+        flex-wrap: wrap
+    }
+    main .step::before {
+        display: none
+    }
+    main .step .first {
+        padding-bottom: 5rem
+    }
+    main .step .second {
+        border-radius: 0 0 1.5rem 1.5rem
+    }
+    main .step_content {
+        width: 100%
+    }
+    main .step_content div:nth-child(2) {
+        width: 90%
+    }
+    main .social {
+        display: flex;
+        flex-direction: row;
+        transform: translateX(0);
+        position: relative;
+        top: 0;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 5rem;
+        justify-content: center;
+        align-items: center
+    }
+    main .container .wrapper {
+        width: 100% !important
+    }
+    main .container .wrapper .top {
+        gap: 3rem
+    }
+    main .container .wrapper .top .content_box {
+        width: 100%;
+        padding-bottom: 1.5rem
+    }
+    main .container .wrapper .top .servers::before {
+        transform: translateX(0)
+    }
+    main .container .wrapper .top .servers_wrapper::before {
+        display: none
+    }
+    main .container .wrapper .top .servers span {
+        justify-content: center;
+        flex-wrap: wrap
+    }
+}
+
+/*# sourceMappingURL=media.min.css.map */

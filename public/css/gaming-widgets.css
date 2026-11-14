@@ -1,0 +1,88 @@
+.gaming-widget-container {
+    max-width: 800px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.5); /* hitam transparan */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 14px;
+    padding: 24px;
+    color: #e0e0e0;
+    font-family: 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(8px);
+}
+
+.side-block {
+    background-color: rgba(20, 20, 20, 0.5); /* hitam transparan */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+    padding: 18px 24px;
+    margin-bottom: 24px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.block-title {
+    font-size: 22px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 6px;
+    color: rgba(255, 255, 255, 0.9);
+    text-shadow: 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.block-content {
+    margin-bottom: 12px;
+    font-size: 16px;
+    color: rgba(220, 220, 220, 0.9);
+}
+
+.table-gmlist {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-gmlist tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.table-gmlist td {
+    padding: 12px;
+    vertical-align: middle;
+    color: rgba(230, 230, 230, 0.9);
+}
+
+.table-gmlist img.img-rounded {
+    border-radius: 50%;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.badge {
+    padding: 6px 14px;
+    border-radius: 12px;
+    font-weight: bold;
+    font-size: 14px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #f0f0f0;
+}
+
+.bg-success {
+    background-color: rgba(0, 255, 100, 0.3) !important;
+    color: #fff;
+    box-shadow: 0 0 6px rgba(0, 255, 100, 0.3);
+}
+
+.bg-danger {
+    background-color: rgba(255, 59, 79, 0.4) !important;
+    color: #fff;
+    box-shadow: 0 0 6px rgba(255, 59, 79, 0.3);
+}
+
+.label.label-default {
+    background-color: rgba(40, 40, 40, 0.5);
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 14px;
+    color: rgba(220, 220, 220, 0.9);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}

@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!--<< Header Area >>-->
+    <head>
+       <!-- ========== Meta Tags ========== -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Pixel-plus">
+        <meta name="description" content="Pubzi - eSports and Gaming HTML Template">
+        <!-- ======== Page title ============ -->
+        <title>Etherna Perfect World</title>
+        <!--<< Favcion >>-->
+        <link rel="shortcut icon" href="assets/img/favicon.svg">
+        <!--<< Bootstrap min.css >>-->
+        <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+        <!--<< All Min Css >>-->
+        <link rel="stylesheet" href="assets/css/all.min.css">
+        <!--<< Animate.css >>-->
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <!--<< Magnific Popup.css >>-->
+        <link rel="stylesheet" href="assets/css/magnific-popup.css">
+        <!--<< MeanMenu.css >>-->
+        <link rel="stylesheet" href="assets/css/meanmenu.css">
+        <!--<< Swiper Bundle.css >>-->
+        <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+        <!--<< Nice Select.css >>-->
+        <link rel="stylesheet" href="assets/css/nice-select.css">
+        <!--<< Main.css >>-->
+        <link rel="stylesheet" href="assets/css/main.css">
+                            
+    </head>
+    <body>
+        <!-- GT Back To Top Start -->
+        <button id="gt-back-top" class="gt-back-to-top show">
+            <i class="fa-regular fa-arrow-up"></i>
+        </button>
+
+        <!-- GT MouseCursor Start -->
+        <div class="mouseCursor cursor-outer"></div>
+        <div class="mouseCursor cursor-inner"></div>
+
+        
+
+        <!-- Header Section Start -->
+        <header id="header-sticky" class="header-2">
+            <div class="container-fluid">
+                <div class="mega-menu-wrapper">
+                    <div class="header-main">
+                        <div class="header-left">
+                            <div class="header__hamburger d-xl-block my-auto">
+                            <div class="sidebar__toggle">
+                                <img src="assets/img/logo/ber.svg" alt="">
+                            </div>
+                        </div>
+                        <div class="logo">
+                            <a href="/" class="header-logo">
+                                <img src="assets/img/logo/white-logo-3.svg" alt="logo-img">
+                            </a>
+                        </div>
+                        </div>
+                        <div class="header-right d-flex justify-content-end align-items-center mt-0">
+                            <div class="mean__menu-wrapper">
+                                <div class="main-menu">
+                                   <nav id="mobile-menu">
+                                        <ul>
+                                            <li class="has-dropdown active menu-thumb">
+                                                <a href="/">
+                                                    Home 
+                                            </li>
+                                            <li>
+                                                <a href="/download">Download</a>
+                                            </li>
+                                            <li>
+                                                <a href="/guide">
+                                                    Guide
+                                                </a>                                               
+                                            </li>
+                                            <li class="has-dropdown">
+                                                <a href="/dashboard/ranking/player/level">
+                                                    Rank
+                                            </li>
+                                            <li>
+                                                <a href="/contact">Contact Us</a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                                <div class="header-button">
+                                    <a href="/dashboard" class="theme-btn style-2">
+                                        <span class="left-line"></span>
+                                        Account
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                        <path d="M9.41099 8.46917L1.88219 16L0 14.1166L7.53013 6.58846L0.941096 0H16V15.0576L9.41099 8.46917Z" fill="#0B0E13"></path>
+                                        </svg>
+                                    </a>
+                                </div>
+                                <div class="header__hamburger d-xl-none d-xl-block my-auto">
+                                    <div class="sidebar__toggle">
+                                        <img src="assets/img/logo/dot-ber.svg" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- GT Search Start -->
+        <div class="search-popup">
+            <div class="search-popup__overlay search-toggler"></div>
+            <div class="search-popup__content">
+                <form role="search" method="get" class="search-popup__form" action="#">
+                    <input type="text" id="search" name="search" placeholder="Search Here...">
+                    <button type="submit" aria-label="search submit" class="search-btn">
+                        <span><i class="fa-regular fa-magnifying-glass"></i></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Hero Section Start -->
+        <section class="hero-section hero-2 bg-cover" style="background-image: url('assets/img/home-2/hero/hero-bg.jpg');">
+            <div class="top-shape">
+                <img src="assets/img/home-2/hero/left-shape.png" alt="img">
+            </div>
+            <div class="top-line">
+                <img src="assets/img/home-2/hero/top-line.png" alt="img">
+            </div>
+             <div class="bottom-shape">
+                <img src="assets/img/home-2/hero/bottom-shape.png" alt="img">
+            </div>
+            <div class="left-shape float-bob-y">
+                <img src="assets/img/home-2/hero/left-2.png" alt="img">
+            </div>
+            <div class="right-shape">
+                <img src="assets/img/home-2/hero/right-shape.png" alt="img">
+            </div>
+            <div class="right-shape2 float-bob-y">
+                <img src="assets/img/home-2/hero/right-shape2.png" alt="img">
+            </div>
+            <div class="game-controll float-bob-x">
+                <img src="assets/img/home-2/hero/game-controll.png" alt="">
+            </div>
+            <div class="game-controll-bg">
+                <img src="assets/img/home-2/hero/game-controll-bg.png" alt="img">
+            </div>
+             <div class="right-shape-3">
+                <img src="assets/img/home-2/hero/shape-5.png" alt="img">
+            </div>
+            <div class="blur-shape">
+                <img src="assets/img/home-2/hero/blur.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="hero-content">
+                            <span class="sub-title wow fadeInUp">Welcome To . .</span>
+                            <h1 class="wow fadeInUp" data-wow-delay=".3s">
+                                Eterna <span>Perfect World</span>
+                            </h1>
+                            <div class="hero-sub-content">
+                                <p class="wow fadeInUp" data-wow-delay=".5s">
+                                    A game studio crafting exciting, high-quality
+                                    video games, prioritizing immersive
+                                    gameplay and mechanics.
+                                </p>
+                                <a href="/guide" class="theme-btn style-2 wow fadeInUp" data-wow-delay=".7s">
+                                    <span class="left-line"></span>
+                                    Guide Here 
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M9.41099 8.46917L1.88219 16L0 14.1166L7.53013 6.58846L0.941096 0H16V15.0576L9.41099 8.46917Z" fill="#0B0E13"/>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="hero-image wow bounceInRight" data-wow-delay="700ms" data-wow-duration="1000ms">
+                <img src="assets/img/home-2/hero/hero1.png" alt="img">
+            </div>
+        </section>
+
+        <!-- Brand Section Start -->
+        <div class="brand-section-2 section-padding fix">
+            <div class="container">
+                <div class="swiper brand-slider-2">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="brand-image-2">
+                                <img src="assets/img/home-2/brand/brand-01.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-image-2">
+                                <img src="assets/img/home-2/brand/brand-02.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-image-2">
+                                <img src="assets/img/home-2/brand/brand-03.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-image-2">
+                                <img src="assets/img/home-2/brand/brand-04.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-image-2">
+                                <img src="assets/img/home-2/brand/brand-05.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-image-2">
+                                <img src="assets/img/home-2/brand/brand-06.png" alt="img">
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="brand-image-2">
+                                <img src="assets/img/home-2/brand/brand-07.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       
+        <!-- About Section Start -->
+        <section class="about-section-2 section-padding pt-0 fix">
+            <div class="about-shape-1">
+                <img src="assets/img/home-2/about/about-shape-1.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="about-wrapper-2">
+                    <div class="row g-4 align-items-center">
+                        <div class="col-lg-6">
+                            <div class="about-iamge wow fadeInUp" data-wow-delay=".3s">
+                                <img src="assets/img/home-2/about/aout-01.jpg" alt="img">
+                                <div class="line-shape">
+                                    <img src="assets/img/home-2/about/line-shape.png" alt="img">
+                                </div>
+                                <div class="text-shape float-bob-y">
+                                    <img src="assets/img/home-2/about/text-shape.png" alt="img">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-content">
+                                <div class="section-title mb-0">
+                                    <h6 class="wow fadeInUp">about our gaming zone</h6>
+                                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                                        More Than Just a Game We Design the Moments That Matter
+                                    </h2>
+                                </div>
+                                <p class="about-text wow fadeInUp" data-wow-delay=".5s">
+                                    Emerging trends in the esports industry include the growth of mobile esports, the integration of virtual reality in gaming experiences, and the increasing involvement of traditional sports.
+                                </p>
+                                <div class="counter-wrap-2">
+                                    <div class="counter-item-2 wow fadeInUp" data-wow-delay=".2s">
+                                        <h2>
+                                            <span class="gt-count">320</span> +
+                                        </h2>
+                                        <p>GAME PLAYED</p>
+                                    </div>
+                                    <div class="counter-item-2 wow fadeInUp" data-wow-delay=".4s">
+                                        <h2>
+                                            <span class="gt-count">175</span> +
+                                        </h2>
+                                        <p>FLAGS TAKEN</p>
+                                    </div>
+                                    <div class="counter-item-2 wow fadeInUp" data-wow-delay=".6s">
+                                        <h2>
+                                            <span class="gt-count">79</span> +
+                                        </h2>
+                                        <p>DEATH MATCHES</p>
+                                    </div>
+                                    <div class="counter-item-2 style-2 wow fadeInUp" data-wow-delay=".8s">
+                                        <h2>
+                                            <span class="gt-count">99</span> %
+                                        </h2>
+                                        <p>WINING GAME</p>
+                                    </div>
+                                </div>
+                                <a href="/download" class="theme-btn style-2 wow fadeInUp" data-wow-delay=".9s">
+                                    <span class="left-line"></span>
+                                    Download Here
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                    <path d="M9.41099 8.46917L1.88219 16L0 14.1166L7.53013 6.58846L0.941096 0H16V15.0576L9.41099 8.46917Z" fill="#0B0E13"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+		
+		 <div class="row g-4">
+
+   {{-- ============================= --}}
+{{-- RANKING SECTION --}}
+{{-- ============================= --}}
+
+<section class="ranking-home-section" style="padding: 80px 20px;">
+
+    <div class="container">
+
+        <div class="row g-5 justify-content-center">
+
+            {{-- ============================= --}}
+            {{-- LEFT : TOP TOTAL KILL --}}
+            {{-- ============================= --}}
+            <div class="col-lg-6">
+
+                <div class="text-center mb-4">
+
+                    <span class="text-uppercase">
+                        Perfect World Eterna
+                    </span>
+
+                    <h2 class="mt-2">
+                        Top Killers
+                    </h2>
+
+                    <p>
+                        Player dengan total kill tertinggi
+                    </p>
+
+                </div>
+
+                <div>
+
+                    @php
+                        $classIcons = [
+                            0 => 'blademaster',
+                            1 => 'mage',
+                            2 => 'psychic',
+                            3 => 'venomancer',
+                            4 => 'barbarian',
+                            5 => 'assassin',
+                            6 => 'archer',
+                            7 => 'cleric',
+                            8 => 'seeker',
+                            9 => 'mystic',
+                            10 => 'duskblade',
+                            11 => 'stormbringer',
+                            12 => 'technician',
+                            13 => 'edgerunner',
+                            14 => 'wildwalker',
+                        ];
+                    @endphp
+
+                    @forelse($ranks as $rank)
+
+                        @php
+                            $classId = $rank->cls;
+                            $classKey = $classIcons[$classId] ?? 'unknown';
+                        @endphp
+
+                        <div class="d-flex align-items-center p-3 mb-3"
+                             style="
+                                background: rgba(255,255,255,0.06);
+                                border: 1px solid rgba(255,255,255,0.10);
+                                border-radius: 12px;
+                                width: 100%;
+                             ">
+
+                            {{-- RANK --}}
+                            <div class="me-3"
+                                 style="
+                                    width: 35px;
+                                    min-width: 35px;
+                                    text-align: center;
+                                    font-size: 18px;
+                                    font-weight: 700;
+                                 ">
+
+                                #{{ $loop->iteration }}
+
+                            </div>
+
+                            {{-- CLASS --}}
+                            <div class="me-3">
+
+                                <img
+                                    src="{{ asset('img/icon/' . $classKey . '.png') }}"
+                                    alt="{{ $classKey }}"
+                                    style="
+                                        width: 42px;
+                                        height: 42px;
+                                        object-fit: contain;
+                                    "
+                                >
+
+                            </div>
+
+                            {{-- NAME --}}
+                            <div class="flex-grow-1">
+
+                                <div style="
+                                    font-size: 16px;
+                                    font-weight: 700;
+                                ">
+                                    {{ $rank->name }}
+                                </div>
+
+                                <small style="opacity:.65;">
+                                    {{ __('general.classes.' . $classId) }}
+                                </small>
+
+                            </div>
+
+                            {{-- KILL --}}
+                            <div class="text-center">
+
+                                <div style="
+                                    font-size: 19px;
+                                    font-weight: 700;
+                                ">
+                                    {{ number_format($rank->pk_count) }}
+                                </div>
+
+                                <small style="opacity:.6;">
+                                    TOTAL KILL
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    @empty
+
+                        <div class="text-center">
+                            <p>Belum ada data ranking.</p>
+                        </div>
+
+                    @endforelse
+
+                </div>
+
+                <div class="text-center mt-4">
+
+                    <a href="{{ route('app.ranking.player', 'pvp') }}"
+                       class="theme-btn">
+
+                        Lihat Semua Ranking
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            {{-- ============================= --}}
+{{-- RIGHT : TOP SPENDER --}}
+{{-- ============================= --}}
+<div class="col-lg-6">
+
+    <div class="text-center mb-4">
+
+        <span class="text-uppercase">
+            Perfect World Eterna
+        </span>
+
+        <h2 class="mt-2">
+            Top Spender
+        </h2>
+
+        <p>
+            Top spender bulan
+            {{ \Carbon\Carbon::create($tahun, $bulan, 1)->translatedFormat('F Y') }}
+        </p>
+
+    </div>
+
+
+    {{-- TOTAL DONASI --}}
+    <div class="p-3 mb-3 text-center"
+         style="
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.10);
+            border-radius: 12px;
+            width: 100%;
+         ">
+
+        <small style="opacity:.65;">
+            TOTAL DONASI BULAN INI
+        </small>
+
+        <div style="
+            font-size: 22px;
+            font-weight: 700;
+        ">
+            Rp. {{ number_format($totalMoneyAllSpenders, 0, ',', '.') }}
+        </div>
+
+    </div>
+
+
+    {{-- SPENDER LIST --}}
+    @forelse($topSpenders as $spender)
+
+        <div class="d-flex align-items-center p-3 mb-3"
+             style="
+                background: rgba(255,255,255,0.06);
+                border: 1px solid rgba(255,255,255,0.10);
+                border-radius: 12px;
+                width: 100%;
+             ">
+
+            {{-- RANK --}}
+            <div class="me-3"
+                 style="
+                    width: 35px;
+                    min-width: 35px;
+                    text-align: center;
+                    font-size: 18px;
+                    font-weight: 700;
+                 ">
+
+                #{{ $loop->iteration }}
+
+            </div>
+
+
+            {{-- NAME --}}
+            <div class="flex-grow-1">
+
+                <div style="
+                    font-size: 16px;
+                    font-weight: 700;
+                ">
+
+                    {{ \Illuminate\Support\Str::limit($spender->name, 25, '') }}
+
+                </div>
+
+                <small style="opacity:.65;">
+                    {{ $spender->streamer_name ?? '-' }}
+                </small>
+
+            </div>
+
+
+            {{-- TOTAL DONASI RUPIAH ASLI --}}
+            <div class="text-end">
+
+                <div style="
+                    font-size: 18px;
+                    font-weight: 700;
+                ">
+
+                    Rp. {{ number_format($spender->total_money, 0, ',', '.') }}
+
+                </div>
+
+            </div>
+
+        </div>
+
+    @empty
+
+        <div class="text-center">
+            <p>Belum ada data spender bulan ini.</p>
+        </div>
+
+    @endforelse
+
+
+    <div class="text-center mt-4">
+
+        <a href="{{ route('app.ranking.spendercoin') }}"
+           class="theme-btn">
+
+            Lihat Semua Spender
+
+        </a>
+
+    </div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+        <!-- Video Section Start -->
+        <section class="video-section-2 parallaxie fix section-padding bg-cover" style="background-image: url('assets/img/home-2/video-bg.jpg');">
+           <div class="video-info-items">
+                <h2 class="title">Born to Game</h2>
+                <a href="https://www.youtube.com/watch?v=Cn4G2lZ_g2I" class="video-btn ripple video-popup">
+                    <i class="fa-solid fa-play"></i>
+                </a>
+           </div>
+        </section>
+
+        <!-- Game Section Start -->
+        <section class="game-section-2 fix section-padding">
+            <div class="container">
+                <div class="section-title-area">
+                    <div class="section-title mb-0">
+                        <h6 class="wow fadeInUp">our best games</h6>
+                        <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                           Our High Regulation <br> Games For You
+                        </h2>
+                    </div>
+                   <a href="https://chat.whatsapp.com/LpVY9cpP4sD5kFmlVdiHdo" class="theme-btn style-2 wow fadeInUp" data-wow-delay=".5s">
+                        <span class="left-line"></span>
+                        Join Whatsapp Group
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path d="M9.41099 8.46917L1.88219 16L0 14.1166L7.53013 6.58846L0.941096 0H16V15.0576L9.41099 8.46917Z" fill="#0B0E13"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="swiper game-slider-2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="gt-gaming-card-item">
+                            <div class="gt-gaming-image">
+                                <img src="assets/img/home-2/game/game-01.jpg" alt="img">
+                                <a href="game-details.html" class="icon">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <div class="gt-gaming-content">
+                                    <h6>metaverse</h6>
+                                    <h3>
+                                        <a href="game-details.html">Sweet revenge gameplay</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gt-gaming-card-item">
+                            <div class="gt-gaming-image">
+                                <img src="assets/img/home-2/game/game-02.jpg" alt="img">
+                                <a href="game-details.html" class="icon">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <div class="gt-gaming-content">
+                                    <h6>metaverse</h6>
+                                    <h3>
+                                        <a href="game-details.html">Sweet revenge gameplay</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gt-gaming-card-item">
+                            <div class="gt-gaming-image">
+                                <img src="assets/img/home-2/game/game-03.jpg" alt="img">
+                                <a href="game-details.html" class="icon">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <div class="gt-gaming-content">
+                                    <h6>metaverse</h6>
+                                    <h3>
+                                        <a href="game-details.html">Sweet revenge gameplay</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gt-gaming-card-item">
+                            <div class="gt-gaming-image">
+                                <img src="assets/img/home-2/game/game-04.jpg" alt="img">
+                                <a href="game-details.html" class="icon">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <div class="gt-gaming-content">
+                                    <h6>metaverse</h6>
+                                    <h3>
+                                        <a href="game-details.html">Sweet revenge gameplay</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="gt-gaming-card-item">
+                            <div class="gt-gaming-image">
+                                <img src="assets/img/home-2/game/game-05.jpg" alt="img">
+                                <a href="game-details.html" class="icon">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <div class="gt-gaming-content">
+                                    <h6>metaverse</h6>
+                                    <h3>
+                                        <a href="game-details.html">Sweet revenge gameplay</a>
+                                    </h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                 <div class="game-slider-pagination">
+                    <div class="game-progress p-relative">
+                        <div class="game-swiper-pagination"></div>
+                    </div>
+                     <div class="array-button d-flex align-items-center">
+                        <button class="array-prev">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                                <g clip-path="url(#clip0_0_434)">
+                                    <path d="M1.16006 18L14.762 18C15.4019 18 15.9222 17.4797 15.9222 16.8398C15.9222 16.2 15.4019 15.6797 14.762 15.6797L3.96553 15.6797L17.6589 1.98281C18.1124 1.5293 18.1124 0.794531 17.6589 0.341017C17.2054 -0.112499 16.4706 -0.112499 16.0171 0.341017L2.32373 14.0379L2.32373 3.24141C2.32373 2.60156 1.80342 2.08125 1.16357 2.08125C0.52373 2.08125 0.00341662 2.60156 0.00341668 3.24141L0.00341787 16.8398C-9.73203e-05 17.4797 0.520214 18 1.16006 18Z" fill="#0B0E13"/>
+                                </g>
+                                <defs>
+                                    <clipPath id="clip01_0_434">
+                                    <rect width="18" height="18" fill="white" transform="translate(18 18) rotate(180)"/>
+                                    </clipPath>
+                                </defs>
+                            </svg>
+                        </button>
+                        <button class="array-next">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18" fill="none">
+                            <g clip-path="url(#clip0_0_427)">
+                                <path d="M16.8399 0H3.23799C2.59814 0 2.07783 0.520312 2.07783 1.16016C2.07783 1.8 2.59814 2.32031 3.23799 2.32031H14.0345L0.341113 16.0172C-0.112402 16.4707 -0.112402 17.2055 0.341113 17.659C0.794629 18.1125 1.52939 18.1125 1.98291 17.659L15.6763 3.96211V14.7586C15.6763 15.3984 16.1966 15.9187 16.8364 15.9187C17.4763 15.9187 17.9966 15.3984 17.9966 14.7586V1.16016C18.0001 0.520312 17.4798 0 16.8399 0Z" fill="#0B0E13"/>
+                            </g>
+                            <defs>
+                                <clipPath id="clip02_0_427">
+                                <rect width="18" height="18" fill="white"/>
+                                </clipPath>
+                            </defs>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Marque Section Start -->
+        <div class="marque-section section-padding fix pt-0">
+            <div class="marquee-wrapper text-slider">
+                <div class="marquee-inner to-left">
+                    <ul class="marqee-list d-flex">
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-1.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-2.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-3.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-4.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-5.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-6.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-7.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-8.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-9.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-10.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-11.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-12.jpg" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                     <ul class="marqee-list d-flex">
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-1.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-2.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-3.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-4.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-5.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-6.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-7.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-8.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-9.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-10.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-11.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-12.jpg" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                     <ul class="marqee-list d-flex">
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-1.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-2.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-3.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-4.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-5.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-6.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-7.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-8.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-9.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-10.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-11.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-12.jpg" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                     <ul class="marqee-list d-flex">
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-1.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-2.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-3.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-4.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-5.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-6.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-7.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-8.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-9.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-10.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-11.jpg" alt="">
+                            </span>
+                        </li>
+                        <li class="marquee-item">
+                            <span class="text-slider">
+                                <img src="assets/img/home-1/gaming-logo/logo-12.jpg" alt="">
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Team Section Start -->
+        <section class="team-section-2 fix section-padding pt-0">
+            <div class="team-shape">
+                <img src="assets/img/home-2/team/team-shape.png" alt="img">
+            </div>
+            <div class="container">
+                <div class="section-title-2 text-center">
+                    <h6 class="wow fadeInUp">team members</h6>
+                    <h2 class="wow fadeInUp" data-wow-delay=".3s">
+                     Our Team Player
+                    </h2>
+                </div>
+                <div class="swiper team-slider-2">
+                    <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/1.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/2.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/3.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/4.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/5.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/6.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/7.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/8.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/9.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/10.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/11.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/12.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/13.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="team-single-style-2">
+                            <div class="team-bg">
+                                <img src="assets/img/home-2/team/team-bg.png" alt="img">
+                            </div>
+                            <div class="thumb">
+                                <img src="assets/img/home-2/team/14.png" alt="img">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="array-button d-grid align-items-center">
+                <button class="array-prev">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                        <g clip-path="url(#clip0_46_137)">
+                            <path d="M0.499999 1.16006L0.5 14.762C0.5 15.4019 1.02031 15.9222 1.66016 15.9222C2.3 15.9222 2.82031 15.4019 2.82031 14.762L2.82031 3.96553L16.5172 17.6589C16.9707 18.1124 17.7055 18.1124 18.159 17.6589C18.6125 17.2054 18.6125 16.4706 18.159 16.0171L4.46211 2.32373L15.2586 2.32373C15.8984 2.32373 16.4187 1.80342 16.4187 1.16357C16.4187 0.523731 15.8984 0.0034173 15.2586 0.00341732L1.66016 0.00341792C1.02031 -9.72975e-05 0.499999 0.520214 0.499999 1.16006Z" fill="#0B0E13"/>
+                        </g>
+                        <defs>
+                            <clipPath id="clip0_46_137">
+                            <rect width="18" height="18" fill="white" transform="translate(0.5 18) rotate(-90)"/>
+                            </clipPath>
+                        </defs>
+                    </svg>
+                </button>
+                <button class="array-next">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="18" viewBox="0 0 19 18" fill="none">
+                    <g clip-path="url(#clip0_46_130)">
+                        <path d="M18.5 16.8399L18.5 3.23799C18.5 2.59814 17.9797 2.07783 17.3398 2.07783C16.7 2.07783 16.1797 2.59814 16.1797 3.23799L16.1797 14.0345L2.48281 0.341113C2.0293 -0.112403 1.29453 -0.112403 0.841017 0.341112C0.387501 0.794628 0.387501 1.52939 0.841017 1.98291L14.5379 15.6763L3.74141 15.6763C3.10156 15.6763 2.58125 16.1966 2.58125 16.8364C2.58125 17.4763 3.10156 17.9966 3.74141 17.9966L17.3398 17.9966C17.9797 18.0001 18.5 17.4798 18.5 16.8399Z" fill="#0B0E13"/>
+                    </g>
+                    <defs>
+                        <clipPath id="clip0_46_130">
+                        <rect width="18" height="18" fill="white" transform="translate(18.5) rotate(90)"/>
+                        </clipPath>
+                    </defs>
+                    </svg>
+                </button>
+            </div>
+        </section>
+		
+        <!-- GT Footer Section Start -->
+        <footer class="gt-footer-section bg-cover" style="background-image: url('assets/img/home-2/footer/footer-bg.jpg');">
+            <div class="footer-main-bg">
+                <div class="left-shape float-bob-y">
+                    <img src="assets/img/home-2/footer/left-shape.png" alt="img">
+                </div>
+                <div class="right-shape float-bob-y">
+                    <img src="assets/img/home-2/footer/right-shape.png" alt="img">
+                </div>
+                <div class="container">
+                <div class="gt-footer-widget-wrapper">
+                    <div class="row justify-content-between">
+                        <div class="col-xl-4 col-lg-6 col-md-12 wow fadeInUp" data-wow-delay=".2s">
+                            <div class="gt-footer-widget-items">
+                                <div class="gt-widget-head">
+                                    <a href="index.html" class="gt-footer-logo">
+                                        <img src="assets/img/logo/logokecil.svg" alt="img">
+                                    </a>
+                                </div>
+                                <div class="gt-footer-content">
+                                    <p>
+                                        A game studio crafting exciting, high-quality video games, prioritizing immersive gameplay and mechanics. Hac habitasse platea
+                                    </p>
+                                    <div class="gt-social-icon d-flex align-items-center">
+                                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#"><i class="fab fa-twitter"></i></a>
+                                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".4s">
+                            <div class="gt-footer-widget-items">
+                                <div class="gt-widget-head">
+                                    <h5>Our Studio</h5>
+                                </div>
+                                <ul class="gt-list-area">
+                                    <li>
+                                        <a href="about.html">
+                                            About Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="team.html">
+                                            our team
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            Advertising
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            Legal Notices
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            Partnership
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-2 ps-lg-3 col-lg-3 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".6s">
+                            <div class="gt-footer-widget-items">
+                                <div class="gt-widget-head">
+                                    <h5>Utility Pages</h5>
+                                </div>
+                                <ul class="gt-list-area">
+                                    <li>
+                                        <a href="service-details.html">
+                                            Terms of Service
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">
+                                            Privacy/Terms
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="service-details.html">
+                                            Gift Cards
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="game-details.html">
+                                            Game Reviews
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="contact.html">
+                                            Subscriptions
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 wow fadeInUp" data-wow-delay=".8s">
+                            <div class="gt-footer-widget-items">
+                                <div class="gt-widget-head">
+                                    <h5>download our games</h5>
+                                </div>
+                                <div class="gt-footer-app">
+                                    <div class="app-image">
+                                        <img src="assets/img/home-2/footer/app-1.jpg" alt="img">
+                                    </div>
+                                    <div class="app-image">
+                                        <img src="assets/img/home-2/footer/app-2.jpg" alt="img">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-bottom wow fadeInUp" data-wow-delay=".3s">
+                    <div class="footer-wrapper">
+                        <p>Eterna Perfect World . All Rights Reserved.</p>
+                        <ul class="gt-footer-list wow fadeInUp" data-wow-delay=".3s">
+                            <li>
+                                <a href="contact.html">Cookies</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Privacy</a>
+                            </li>
+                            <li>
+                                <a href="contact.html">Terms</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            </div>
+            
+        </footer>
+         
+         <!--<< All JS Plugins >>-->
+        <script src="assets/js/jquery-3.7.1.min.js"></script>
+        <!--<< Viewport Js >>-->
+        <script src="assets/js/viewport.jquery.js"></script>
+        <!--<< Bootstrap Js >>-->
+        <script src="assets/js/bootstrap.bundle.min.js"></script>
+        <!--<< nice-selec Js >>-->
+        <script src="assets/js/jquery.nice-select.min.js"></script>
+        <!--<< Waypoints Js >>-->
+        <script src="assets/js/jquery.waypoints.js"></script>
+        <!--<< Counterup Js >>-->
+        <script src="assets/js/jquery.counterup.min.js"></script>
+        <!--<< Parallaxie Min Js >>-->
+        <script src="assets/js/parallaxie.js"></script>
+        <!--<< Swiper Slider Js >>-->
+        <script src="assets/js/swiper-bundle.min.js"></script>
+        <!--<< MeanMenu Js >>-->
+        <script src="assets/js/jquery.meanmenu.min.js"></script>
+        <!--<< Magnific Popup Js >>-->
+        <script src="assets/js/jquery.magnific-popup.min.js"></script>
+        <!--<< Gsap Min  Js >>-->
+        <script src="assets/js/gsap.min.js"></script>
+        <!--<< Gsap Scroll Trigger To Plugin Js >>-->
+        <script src="assets/js/gsap-scroll-to-plugin.js"></script>
+        <!--<< Gsap Scroll Trigger Smoother Js >>-->
+        <script src="assets/js/gsap-scroll-smoother.js"></script>
+        <!--<< Gsap Scroll Trigger Js >>-->
+        <script src="assets/js/gsap-scroll-trigger.js"></script>
+        <!--<< Splittext Min Js >>-->
+        <script src="assets/js/SplitText.min.js"></script>
+        <!--<< Wow Animation Js >>-->
+        <script src="assets/js/wow.min.js"></script>
+        <!--<< Main.js >>-->
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>

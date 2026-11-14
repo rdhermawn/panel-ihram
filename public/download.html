@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/backdrop.css">
+    <title>Oblivion Perfect World</title>
+    <link rel="icon" href="images/favicon.png">
+    <script src="js/jquery-3.2.1.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+
+<body>
+
+    <!-- Preloader START -->
+    <style>
+        /* preload */
+
+        .preload {
+            background: #130f0f url(images/STARLIGHT.png) no-repeat center center;
+            background-size: 15%;
+            background-position-y: 45%;
+            position: fixed;
+            z-index: 999999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.5s cubic-bezier(.64, .14, .34, 1.32);
+        }
+
+        .preload.fade {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(3);
+        }
+
+        .page_block {
+            text-align: center;
+            position: relative;
+            margin: 20px 0px;
+            padding: 20px 20px;
+            background: linear-gradient(90deg, rgba(5, 17, 34, 0) 0%, rgba(58, 31, 16, 0.5) 52.5%, rgba(5, 17, 34, 0) 100%);
+        }
+
+        .page_block:before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: 0;
+            background: url(../images/page_block_dec.svg);
+            width: 100%;
+            height: 1px;
+        }
+
+        .page_block:after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: 0;
+            background: url(../images/page_block_dec.svg);
+            width: 100%;
+            height: 1px;
+        }
+
+        .page_block_title {
+            color: #D2C39A;
+            font-family: ReaverSemiBold;
+            font-size: 20px;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .page_block_title img {
+            margin-right: 10px;
+        }
+
+        .page_block_dec {
+            color: #C8C7C4;
+            letter-spacing: 1px;
+            margin: 10px 0px;
+        }
+
+        .page_block_buttons {
+            margin-top: 20px;
+        }
+
+        .page_block_btn {
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid #77632E;
+            display: inline-block;
+            margin: 8px 8px;
+            text-decoration: none !important;
+        }
+
+        .page_block_btn span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #E3BE5E, #9F7B1D);
+            width: 190px;
+            height: 40px;
+            color: #F8F4E8;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.2s;
+            font-family: ReaverSemiBold;
+            text-decoration: none !important;
+        }
+
+        .page_block_btn img {
+            margin-right: 10px;
+        }
+
+        .btn_torrent {
+            background: #759B45 !important;
+        }
+
+        .btn_maildisc {
+            background: #45869B !important;
+        }
+
+        .btn_yandex {
+            background: #B6AA46 !important;
+        }
+
+        .btn_gdrive {
+            background: #45689B !important;
+        }
+
+        .btn_media {
+            background: #1a5ec4 !important;
+        }
+
+        .btn_link {
+            background: #db913d !important;
+        }
+
+        .btn_mega {
+            background: #9B4545 !important;
+        }
+
+        .page_block_btn:hover {
+            filter: brightness(1.12);
+        }
+		
+		.btn_gdrive img {
+			display: inline-block;
+			width: 24px;
+			height: auto;
+			vertical-align: middle;
+		}
+
+    </style>
+    <!-- Preloader END -->
+    <div class="preload"></div>
+    <!-- Preloader END -->
+
+    <script>
+        $(function() {
+            $('.preload').click(function() {
+                $('.preload').addClass('fade');
+            });
+        });
+
+        setTimeout(function() {
+            $('.preload').addClass('fade');
+        }, 1000);
+    </script>
+
+    <!-- Preloader END -->
+    <!--Nav-->
+
+    <nav>
+
+        <div class="container">
+
+            <!--Left Items-->
+
+            <ul class="navM">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="register">Register</a>
+                </li>
+                <!--With Dropdown-->
+                <li>
+                    <a href="download.html">Download</a>
+                </li>
+                <!--end With Dropdown-->
+                <!--With Dropdown-->
+                <li>
+                    <a href="guide.html">Guide</a>
+                </li>
+                <!--end With Dropdown-->
+                <li>
+                    <a href="https://discord.gg/ZBPj44CuSb">Discord</a>
+                </li>
+            </ul>
+
+            <!--end Left Items-->
+
+            <!--Right Items-->
+
+            <ul>
+                <li>
+                    <span style="display: none;" class="lang_hover"><a href="/"><img src="images/ru.jpg" alt=""></a></span>
+                </li>
+
+                <li>
+                    <a href="login"><span>Personal Account</span></a>
+                </li>
+
+            </ul>
+
+            <!--end Right Items-->
+
+            <div class="mobile"><span></span><span></span><span></span></div>
+
+        </div>
+
+    </nav>
+
+    <!--end Nav-->
+
+    <!--Header-->
+
+    <header>
+
+        <div class="container">
+
+            <div class="wrapper">
+
+                <!--Logo-->
+
+                <a href="/" class="logo">
+                    <img src="images/STARLIGHT.png" alt="">
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--Main Content-->
+    <div class="page_block">
+        <div class="page_block_title f-c ai">Register a game account</div>
+        <span class="page_block_dec">Create an account now</span>
+        <div class="page_block_buttons f-c">
+            <a href="register" class="page_block_btn">
+							<span>Create an account</span>
+						</a>
+        </div>
+    </div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">
+            <img src="/images/news_icon.svg" alt=""> Download Full Client
+        </div>
+        <span class="page_block_dec">Full Client</span>
+        <div class="page_block_buttons f-c f-w">
+            <a href="https://drive.usercontent.google.com/download?id=1d1PBXxTOdAlEu_GoY0jKM0htUcPZnWGq&export=download&authuser=0" class="page_block_btn f-c ai" target="_blank">
+    <span class="btn_gdrive">
+        <img src="/images/gdrive.svg" alt="Google Drive" class="gdrive-icon">
+        GDrive
+    </span>
+</a>
+<a href="https://www.mediafire.com/file/aj9v28ahyczik2d/Perfect_World_Offline.7z" class="page_block_btn f-c ai" target="_blank">
+    <span class="btn_gdrive">
+        <img src="/images/mediafire.svg" alt="Google Drive" class="mediafire-icon">
+        MediaFire
+    </span>
+</a>
+<a href="https://bit.ly/4kuq03Y?r=lp&m=Mnb7n2McHZC" class="page_block_btn f-c ai" target="_blank">
+    <span class="btn_gdrive">
+        <img src="/images/pixeldrain.svg" alt="Pixel Drain" class="Pixeldarin-icon">
+        PD
+    </span>
+</a>
+</div>
+    </div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">
+            <img src="/images/news_icon.svg" alt=""> Downloading Patcher
+        </div>
+        <span class="page_block_dec">Autopatcher</span>
+        <div class="page_block_buttons f-c f-w">
+            <a href="https://www.mediafire.com/file/m2s775osoph3w4n/ARCADIA_PATCH.rar/file" class="page_block_btn f-c ai" target="_blank">
+    <span class="btn_gdrive">
+        <img src="/images/mediafire.svg" alt="Media Fire" class="mediafire-icon">
+        MediaFire
+    </span>
+</a>
+<a href="https://drive.google.com/file/d/1RyETX5TNSWuUVokHEDhIoYx8AHA3Zapu/view?usp=sharing" class="page_block_btn f-c ai" target="_blank">
+    <span class="btn_gdrive">
+        <img src="/images/gdrive.svg" alt="Google Drive" class="gdrive-icon">
+        GDrive
+    </span>
+</a>
+<a href="https://www.mediafire.com/file/fxmiitk8s7yntlo/ARCADIA_PATCH.rar/file" class="page_block_btn f-c ai" target="_blank">
+    <span class="btn_gdrive">
+        <img src="/images/mediafire.svg" alt="Media Fire" class="mediafire-icon">
+        MediaFire
+    </span>
+</a>
+						</div>
+    </div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">
+            <img src="/images/news_icon.svg" alt=""> UNPACKING GAME FILES
+        </div>
+        <span class="page_block_dec">Extract the game files from the archive to any convenient location for you. Programs like WinRAR or 7zip are great for extraction.</span>
+        <div class="page_block_buttons f-c f-w">
+            <a href="https://www.win-rar.com/start.html?&amp;L=0" class="page_block_btn f-c ai" target="_blank"><span class="">WinRAR</span></a>
+            <a href="https://www.7-zip.org/" class="page_block_btn f-c ai" target="_blank"><span class="">7zip</span></a>
+        </div>
+    </div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">
+            <img src="/images/news_icon.svg" alt=""> LAUNCHING GAME
+        </div>
+        <span class="page_block_dec">The game client is launched via the Launcher.exe file (located in the client folder). <br>
+			If necessary, the client will automatically update to the latest version. <br> We wish you good luck in the realms of Perfect World.
+				If you have any questions or issues, please contact support on Discord.</span>
+        <div class="page_block_buttons f-c f-w">
+            <a href="https://discord.gg/ZFfvZcuRnj" class="page_block_btn f-c ai" target="_blank"><span class="">Contact Us!</span></a>
+        </div>
+    </div>
+    <!--end Main Content-->
+
+    <!--Footer-->
+
+    <footer>
+
+        <div class="container">
+
+            <!--Copyright-->
+
+            <div>
+                <span>
+                    <h4>© 2024-2025 GAME PROJECT Oblivion</h4>
+                    <p>
+                        The server is an amateur modification of the game. 
+                        <br>
+                        All rights belong to their respective owners. 
+                        <br>
+                </span>
+
+            </div>
+
+            <!--end Copyright-->
+
+            <!--Map-->
+            <div>
+                <ul>
+                    <li><a href="/" target="_blank">Home</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="register" target="_blank">Register</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="terms-of-service" target="_blank">Rules</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="" target="_blank">Support</a></li>
+                </ul>
+				
+
+                <ul>
+                </ul>
+            </div>
+            <!--end Map-->
+
+        </div>
+
+    </footer>
+
+    <!--end Footer-->
+
+    <div class="floating_items-header">
+
+    </div>
+    <div class="floating_smoke">
+        <div class="container">
+
+        </div>
+    </div>
+    <div class="floating_items-middle">
+
+    </div>
+
+    <div id="effect" style="opacity: 0.5;"></div>
+    <Script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) { // F12 atau Ctrl+Shift+I
+                e.preventDefault();
+            }
+        });
+    </Script>
+    <!--Twitch Embed-->
+
+    <script data-cfasync="false" src="js/email-decode.min.js"></script>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+    <script type="text/javascript">
+        new Twitch.Player("twitch-qrookie", {
+            channel: "qrookie",
+            muted: true
+        });
+    </script>
+
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/particles.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

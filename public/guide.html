@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/media.min.css">
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/backdrop.css">
+    <title>Oblivion Perfect World</title>
+    <link rel="icon" href="images/favicon.png">
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Preloader START -->
+    <style>
+        /* preload */
+
+        .preload {
+            background: #130f0f url(images/STARLIGHT.png) no-repeat center center;
+            background-size: 15%;
+            background-position-y: 45%;
+            position: fixed;
+            z-index: 999999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 1;
+            visibility: visible;
+            transition: all 0.5s cubic-bezier(.64, .14, .34, 1.32);
+        }
+
+        .preload.fade {
+            opacity: 0;
+            visibility: hidden;
+            transform: scale(3);
+        }
+
+        .page_block {
+            text-align: center;
+            position: relative;
+            margin: 20px 0px;
+            padding: 20px 20px;
+            background: linear-gradient(90deg, rgba(5, 17, 34, 0) 0%, rgba(58, 31, 16, 0.5) 52.5%, rgba(5, 17, 34, 0) 100%);
+        }
+
+        .page_block:before {
+            position: absolute;
+            content: "";
+            left: 50%;
+            transform: translate(-50%, 0);
+            top: 0;
+            background: url(../images/page_block_dec.svg);
+            width: 100%;
+            height: 1px;
+        }
+
+        .page_block:after {
+            position: absolute;
+            content: "";
+            left: 50%;
+            transform: translate(-50%, 0);
+            bottom: 0;
+            background: url(../images/page_block_dec.svg);
+            width: 100%;
+            height: 1px;
+        }
+
+        .page_block_title {
+            color: #D2C39A;
+            font-family: ReaverSemiBold;
+            font-size: 20px;
+            width: 100%;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+
+        .page_block_title img {
+            margin-right: 10px;
+        }
+
+        .page_block_dec {
+            color: #C8C7C4;
+            letter-spacing: 1px;
+            margin: 10px 0px;
+        }
+
+        .page_block_buttons {
+            margin-top: 20px;
+        }
+
+        .page_block_btn {
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid #77632E;
+            display: inline-block;
+            margin: 8px 8px;
+            text-decoration: none !important;
+        }
+
+        .page_block_btn span {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: linear-gradient(180deg, #E3BE5E, #9F7B1D);
+            width: 190px;
+            height: 40px;
+            color: #F8F4E8;
+            font-size: 14px;
+            letter-spacing: 1px;
+            transition: 0.2s;
+            font-family: ReaverSemiBold;
+            text-decoration: none !important;
+        }
+
+        .page_block_btn img {
+            margin-right: 10px;
+        }
+
+        .btn_torrent {
+            background: #759B45 !important;
+        }
+
+        .btn_maildisc {
+            background: #45869B !important;
+        }
+
+        .btn_yandex {
+            background: #B6AA46 !important;
+        }
+
+        .btn_gdrive {
+            background: #45689B !important;
+        }
+
+        .btn_media {
+            background: #1a5ec4 !important;
+        }
+
+        .btn_link {
+            background: #db913d !important;
+        }
+
+        .btn_mega {
+            background: #9B4545 !important;
+        }
+
+        .page_block_btn:hover {
+            filter: brightness(1.12);
+        }
+    </style>
+    <!-- Preloader END -->
+    <div class="preload"></div>
+    <!-- Preloader END -->
+
+    <script>
+        $(function() {
+            $('.preload').click(function() {
+                $('.preload').addClass('fade');
+            });
+        });
+
+        setTimeout(function() {
+            $('.preload').addClass('fade');
+        }, 1000);
+    </script>
+
+    <!-- Preloader END -->
+    <!--Nav-->
+
+    <nav>
+
+        <div class="container">
+
+            <!--Left Items-->
+
+            <ul class="navM">
+                <li class="active">
+                    <a href="/">Home</a>
+                </li>
+                <li>
+                    <a href="register">Register</a>
+                </li>
+                <!--With Dropdown-->
+                <li>
+                    <a href="download">Download</a>
+                </li>
+                <!--end With Dropdown-->
+                <!--With Dropdown-->
+                <li>
+                    <a href="guide">Guide</a>
+                </li>
+                <!--end With Dropdown-->
+                <li>
+                    <a href="https://discord.gg/9y67TQ9F">Discord</a>
+                </li>
+            </ul>
+
+            <!--end Left Items-->
+
+            <!--Right Items-->
+
+            <ul>
+                <li>
+                    <span style="display: none;" class="lang_hover"><a href="/"><img src="images/en.jpg" alt=""></a></span>
+                </li>
+
+                <li>
+                    <a href="login"><span>Personal Account</span></a>
+                </li>
+
+            </ul>
+
+            <!--end Right Items-->
+
+            <div class="mobile"><span></span><span></span><span></span></div>
+
+        </div>
+
+    </nav>
+
+    <!--end Nav-->
+
+    <!--Header-->
+
+    <header>
+
+        <div class="container">
+
+            <div class="wrapper">
+
+                <!--Logo-->
+
+                <a href="/" class="logo">
+                    <img src="images/STARLIGHT.png" alt="">
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+    <!--Main Content-->
+    <div class="page_block">
+        <div class="page_block_title f-c ai">Server Info</div>
+        <span class="page_block_dec">Perfect World Arcadia</span>
+        <div class="page_block_dec">
+            Server Info<br>
+- Kota kelahiran (Kota Naga Barat)<br>
+- Pusat kota Perlengkapan (Kota Naga Barat/Item Mall)<br>
+- Easy Farming<br>
+- Max lv 105<br>
+- 90% Balance All Job<br>
+- Equipment Mode All G17<br>
+
+
+        </div>
+    </div>
+
+    <div class="page_block">
+        <div class="page_block_title f-c ai">GUIDE</div>
+        <span class="page_block_dec">Ambilah Newbie Quest (Welcome)</span>
+        <div class="page_block_dec">
+          - Instan Fury 3 (Sage)<br>
+	- Instan Reputasi 300k<br>
+	- Instan lv 105<br>
+	- Free Star Chart<br>
+	- Free Skill Book<br>
+	- Reinkar Char level 2<br>
+	- Newbie Equipment (pack)<br>
+	- Semua Item/EQ Bisa di Dapatkan di Dalam Game<br>
+
+        </div>
+    </div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">Farming Bots</div>
+        <span class="page_block_dec">Drop :  Arcadia Ticket & Arcadia Stone</span>
+        <div class="page_block_dec">
+        - Hunting ALL MAP<br>
+	- Leveling Tempat Farming ALL MAP<br>
+
+        </div>
+		</div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">Hunting Arcadia Crystal, Arcadia Diamond & Arcadia Coin's</div>
+        <span class="page_block_dec">Daily Quest </span>
+        <div class="page_block_dec">
+        - 105 322 (Desert Thief)<br>
+	- 168 451 (Desert Lizard)<br>
+	- 152 436 (Elite Basilisk)<br>
+	- 130 1000 (Ninetails)<br>
+	- 155 1002 (Monkey King)<br>
+	- 185 965 (Phebo's)<br>
+
+
+        </div>
+		</div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">GOA NIRVANA</div>
+        <span class="page_block_dec">Drop : </span>
+        <div class="page_block_dec">
+        - GM Coin's<br>
+	- Aracdia Coin's<br>
+	- Soul Stone lv+2<br>
+	- Obat kebal 12 Detik<br>
+
+        </div>
+    </div>
+    </div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">World Boss 1 Jam</div>
+        <span class="page_block_dec">Drop : Moonlight Crystal <br> Arcadia Crysral & Arcadia Diamond</span>
+        <div class="page_block_dec">
+            - 475 568 (Sword Tamer)<br>
+- 633 877 (Cenminator)<br>
+- 440 752 (Dipter)<br>
+- 438 471 (Broadkris Drudge)<br>
+- 553 437 (Sonic Oppressor)<br>
+- 653 390 (Hornska Lord)<br>
+- 658 434 (Soul Hunter)<br>
+- 659 524 (Shadow Doll) <br>
+- 252 755 (Ancient Spearman)<br>
+- 172 787 (Minion of Death)<br>
+- 236 867 (Machinoslitt<br>
+- 159 976 (Cerberean Sentinel)<br>
+- 289 963 (Watcher of Chasm)<br>
+- 308 953 (Mystery of Antiquity)<br>
+- 162 427 (Alphaleus)<br>
+- 151 340 (Auprus:Ton)<br>
+
+	</div>
+    </div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">Big World Boss 5 Jam</div>
+        <span class="page_block_dec">Drop : Arcadia Coin's & Soul Stone lv+2</span>
+        <div class="page_block_dec">
+		 Kordinat<br>
+- Bulan Sabit<br>
+- Gunung Penjara api<br>
+- Danau Langit<br>
+- Pantai Yinyang<br>
+
+            </div>
+    </div>
+	</div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">Hard World Boss 8 Jam</div>
+        <span class="page_block_dec">Drop GM Coin's & Jaden Ticket</span>
+        <div class="page_block_dec">
+		Kordinat<br>
+            - 541 957 (Dataran Hades)<br>
+- 666 672 (Pulau Tanpa Nama)<br>
+- 212 218 (Kuil Leluhur)<br>
+
+        </div>
+		</div>
+</div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">World Boss Rune</div>
+        <span class="page_block_dec">Drop Rune Item Weapon</span>
+        <div class="page_block_dec">
+           Kordinat<br>
+- 502 653 (Kota Naga Barat)<br>
+- 553 704 (Kota Naga Utara)<br>
+- 553 599 (Kota Naga Selatan)<br>
+
+        </div>
+		</div>
+</div>
+    <div class="page_block">
+        <div class="page_block_title f-c ai">World Boss Obat</div>
+        <span class="page_block_dec">Drop Obat Kebal 12 Detik DLL</span>
+        <div class="page_block_dec">
+            Kordinat<br>
+- 261 476 (Desa Angsa)<br>
+
+
+        </div>
+		</div>
+
+    <!--end Main Content-->
+
+    <!--Footer-->
+    <footer>
+
+        <div class="container">
+
+            <!--Copyright-->
+
+            <div>
+                <span>
+                   <h4>© 2024-2025 GAME PROJECT Oblivion</h4>
+                    <p>
+                        The server is an amateur modification of the game. 
+                        <br>
+                        All rights belong to their respective owners. 
+                        <br>
+                </span>
+
+            </div>
+
+            <!--end Copyright-->
+
+             <!--Map-->
+            <div>
+                <ul>
+                    <li><a href="/" target="_blank">Home</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="register" target="_blank">Register</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="terms-of-service" target="_blank">Rules</a></li>
+                </ul>
+
+                <ul>
+                    <li><a href="" target="_blank">Support</a></li>
+                </ul>
+				
+
+                <ul>
+                </ul>
+            </div>
+            <!--end Map-->
+
+        </div>
+
+    </footer>
+
+    <!--end Footer-->
+
+    <div class="floating_items-header">
+
+    </div>
+    <div class="floating_smoke">
+        <div class="container">
+
+        </div>
+    </div>
+    <div class="floating_items-middle">
+
+    </div>
+
+    <div id="effect" style="opacity: 0.5;"></div>
+    <Script>
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73)) { // F12 atau Ctrl+Shift+I
+                e.preventDefault();
+            }
+        });
+    </Script>
+    <!--Twitch Embed-->
+
+    <script data-cfasync="false" src="js/email-decode.min.js"></script>
+    <script src="https://player.twitch.tv/js/embed/v1.js"></script>
+
+    <script type="text/javascript">
+        new Twitch.Player("twitch-qrookie", {
+            channel: "qrookie",
+            muted: true
+        });
+    </script>
+
+    <script src="https://unpkg.com/tippy.js@5"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <script src="js/particles.js"></script>
+</body>
+
+</html>
