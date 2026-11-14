@@ -13,7 +13,7 @@ class DiscordDonationService
         float|int $amount,
         ?string $transactionCode = null
     ): bool {
-        $webhook = config('discord.donation_webhook');
+        $webhook = config('ipaymu.discord_webhook_url') ?: config('discord.donation_webhook');
 
         if (empty($webhook)) {
             Log::warning('Discord webhook belum dikonfigurasi.');
@@ -23,6 +23,24 @@ class DiscordDonationService
 
         try {
 
+            $description = 'Terima kasih atas dukungan untuk **EternaPW**!';
+
+            $template = config('ipaymu.discord_message');
+
+            if (!empty($template)) {
+                $description = str_replace(
+                    ['{player_name}', '{amount}', '{streamer}', '{reference_id}', '{payment_method}'],
+                    [
+                        $donorName ?: '-',
+                        number_format($amount, 0, ',', '.'),
+                        $streamerCode ?: '-',
+                        $transactionCode ?: '-',
+                        'iPaymu',
+                    ],
+                    $template
+                );
+            }
+
             $payload = [
                 'username' => 'EternaPW Donation',
 
@@ -30,8 +48,7 @@ class DiscordDonationService
                     [
                         'title' => 'DONASI BARU',
 
-                        'description' =>
-                            'Terima kasih atas dukungan untuk **EternaPW**!',
+                        'description' => $description,
 
                         'color' => 3066993,
 
@@ -75,6 +92,13 @@ class DiscordDonationService
                     ],
                 ],
             ];
+
+            if (config('ipaymu.discord_mention_everyone')) {
+                $payload['content'] = '@everyone';
+                $payload['allowed_mentions'] = [
+                    'parse' => ['everyone'],
+                ];
+            }
 
             $response = Http::timeout(10)->post(
                 $webhook,

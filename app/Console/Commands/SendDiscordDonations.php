@@ -316,6 +316,19 @@ class SendDiscordDonations extends Command
 
     private function sendDonation($transaction): bool
     {
+        /*
+         * Discord dimatikan dari Admin > Donate > iPaymu, atau webhook belum diisi.
+         * Transaksi tetap ditandai sudah diproses supaya tidak
+         * dikirim massal saat Discord diaktifkan kembali.
+         */
+        if (
+            !config('ipaymu.discord_enabled')
+            ||
+            empty(config('ipaymu.discord_webhook_url') ?: config('discord.donation_webhook'))
+        ) {
+            return true;
+        }
+
         try {
 
             /*
@@ -432,12 +445,27 @@ if ($user) {
             |--------------------------------------------------------------------------
             */
 
-            DiscordDonationService::send(
+            $sent = DiscordDonationService::send(
                 $donorName,
                 $streamerCode,
                 $amount,
                 $referenceId
             );
+
+
+            /*
+             * Webhook gagal: jangan tandai terkirim,
+             * dicoba lagi pada jadwal berikutnya.
+             */
+            if (!$sent) {
+
+                $this->error(
+                    'Discord gagal: ' .
+                    $referenceId
+                );
+
+                return false;
+            }
 
 
             Log::info(

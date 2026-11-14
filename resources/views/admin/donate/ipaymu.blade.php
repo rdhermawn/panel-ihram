@@ -164,6 +164,110 @@
     </div>
 </div>
 
+                    {{-- Broadcast in-game --}}
+                    <h2 class="mt-4 mb-6 text-lg font-semibold">{{ __('donate.ipaymu.broadcast_title') }}</h2>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <div id="broadcast_enabled_switch" class="flex ml-12 pt-5">
+                            <div class="pretty p-switch">
+                                <input type="checkbox" id="broadcast_enabled" name="broadcast_enabled"
+                                       @if( config('ipaymu.broadcast_enabled') === true ) checked @endif
+                                    @popper({{ __('donate.ipaymu.broadcast_enabled_desc') }})
+                                />
+                                <div class="state p-info">
+                                    <label for="broadcast_enabled">
+                                        @if( config('ipaymu.broadcast_enabled') === true )
+                                            {{ __('donate.on') }}
+                                        @else
+                                            {{ __('donate.off') }}
+                                        @endif</label>
+                                </div>
+                            </div>
+                        </div>
+                        <x-hrace009::label for="broadcast_enabled_switch">{{ __('donate.ipaymu.broadcast_enabled') }}</x-hrace009::label>
+                    </div>
+                    <div class="flex flex-row gap-8">
+                        <div class="relative z-0 mb-6 w-1/4 group">
+                            <x-hrace009::input-with-popover id="broadcast_channel" name="broadcast_channel" type="number"
+                                                            value="{{ config('ipaymu.broadcast_channel') ?: 9 }}"
+                                                            placeholder=" "
+                                                            :popover="__('donate.ipaymu.broadcast_channel_desc')"/>
+                            <x-hrace009::label for="broadcast_channel">{{ __('donate.ipaymu.broadcast_channel') }}</x-hrace009::label>
+                        </div>
+                        <div class="relative z-0 mb-6 w-full group">
+                            <x-hrace009::input-with-popover id="broadcast_message" name="broadcast_message" maxlength="255"
+                                                            value="{{ config('ipaymu.broadcast_message') }}"
+                                                            placeholder=" "
+                                                            :popover="__('donate.ipaymu.broadcast_message_desc')"/>
+                            <x-hrace009::label for="broadcast_message">{{ __('donate.ipaymu.broadcast_message') }}</x-hrace009::label>
+                        </div>
+                    </div>
+                    <div class="mb-6 text-xs text-gray-500">
+                        Placeholder: <code>{player_name}</code> <code>{amount}</code> <code>{coin}</code> <code>{currency}</code> <code>{payment_method}</code>
+                        &mdash; {{ __('donate.ipaymu.template_default') }}
+                        <code>{{ \App\Services\IpaymuBroadcastService::DEFAULT_MESSAGE }}</code>
+                    </div>
+
+                    {{-- Discord --}}
+                    <h2 class="mt-4 mb-6 text-lg font-semibold">{{ __('donate.ipaymu.discord_title') }}</h2>
+                    <div class="flex flex-row gap-8">
+                        <div class="relative z-0 mb-6 w-full group">
+                            <div id="discord_enabled_switch" class="flex ml-12 pt-5">
+                                <div class="pretty p-switch">
+                                    <input type="checkbox" id="discord_enabled" name="discord_enabled"
+                                           @if( config('ipaymu.discord_enabled') === true ) checked @endif
+                                        @popper({{ __('donate.ipaymu.discord_enabled_desc') }})
+                                    />
+                                    <div class="state p-info">
+                                        <label for="discord_enabled">
+                                            @if( config('ipaymu.discord_enabled') === true )
+                                                {{ __('donate.on') }}
+                                            @else
+                                                {{ __('donate.off') }}
+                                            @endif</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <x-hrace009::label for="discord_enabled_switch">{{ __('donate.ipaymu.discord_enabled') }}</x-hrace009::label>
+                        </div>
+                        <div class="relative z-0 mb-6 w-full group">
+                            <div id="discord_mention_everyone_switch" class="flex ml-12 pt-5">
+                                <div class="pretty p-switch">
+                                    <input type="checkbox" id="discord_mention_everyone" name="discord_mention_everyone"
+                                           @if( config('ipaymu.discord_mention_everyone') === true ) checked @endif
+                                        @popper({{ __('donate.ipaymu.discord_mention_everyone_desc') }})
+                                    />
+                                    <div class="state p-info">
+                                        <label for="discord_mention_everyone">
+                                            @if( config('ipaymu.discord_mention_everyone') === true )
+                                                {{ __('donate.on') }}
+                                            @else
+                                                {{ __('donate.off') }}
+                                            @endif</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <x-hrace009::label for="discord_mention_everyone_switch">{{ __('donate.ipaymu.discord_mention_everyone') }}</x-hrace009::label>
+                        </div>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <x-hrace009::input-with-popover id="discord_webhook_url" name="discord_webhook_url" type="url"
+                                                        value="{{ config('ipaymu.discord_webhook_url') }}"
+                                                        placeholder=" "
+                                                        :popover="__('donate.ipaymu.discord_webhook_url_desc')"/>
+                        <x-hrace009::label for="discord_webhook_url">{{ __('donate.ipaymu.discord_webhook_url') }}</x-hrace009::label>
+                    </div>
+                    <div class="relative z-0 mb-6 w-full group">
+                        <x-hrace009::input-with-popover id="discord_message" name="discord_message" maxlength="1000"
+                                                        value="{{ config('ipaymu.discord_message') }}"
+                                                        placeholder=" "
+                                                        :popover="__('donate.ipaymu.discord_message_desc')"/>
+                        <x-hrace009::label for="discord_message">{{ __('donate.ipaymu.discord_message') }}</x-hrace009::label>
+                    </div>
+                    <div class="mb-6 text-xs text-gray-500">
+                        Placeholder: <code>{player_name}</code> <code>{amount}</code> <code>{streamer}</code> <code>{reference_id}</code> <code>{payment_method}</code>
+                        &mdash; {{ __('donate.ipaymu.discord_note') }}
+                    </div>
+
                     <div class="flex flex-row gap-8">
                         <code>Your current Route for Callback is: {{ route('api.ipaymu') }}</code>
                     </div>

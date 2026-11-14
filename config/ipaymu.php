@@ -21,6 +21,13 @@ return [
     'route' => 'Eterna Perfect world',
     'promo_code'=> 'EternaPW',
     'promo_bonus_percent'=> '0',
+    'broadcast_enabled' => false,
+    'broadcast_channel' => '9',
+    'broadcast_message' => '',
+    'discord_enabled' => true,
+    'discord_mention_everyone' => false,
+    'discord_webhook_url' => '',
+    'discord_message' => '',
     'streamers' => [		
         [
             'name' => 'MELEDAK',

@@ -18,6 +18,7 @@ use App\Models\Paypal;
 use App\Models\ServiceLog;
 use App\Models\ShopLog;
 use App\Models\User;
+use App\Services\IpaymuBroadcastService;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -1069,9 +1070,12 @@ class DonateController extends Controller
             |--------------------------------------------------------------------------
             */
 
+            $processedLog = null;
+
             DB::transaction(
                 function () use (
-                    $sid
+                    $sid,
+                    &$processedLog
                 ) {
 
                     /*
@@ -1358,8 +1362,20 @@ class DonateController extends Controller
                      * status = berhasil
                      * status_code = 1
                      */
+
+                    $processedLog = $log;
                 }
             );
+
+
+            /*
+             * Broadcast in-game hanya untuk transaksi yang baru berhasil,
+             * setelah database commit dan setelah response dikirim
+             * (socket game server bisa blocking tanpa timeout).
+             */
+            if ($processedLog) {
+                app()->terminating(fn () => IpaymuBroadcastService::send($processedLog));
+            }
 
 
             /*

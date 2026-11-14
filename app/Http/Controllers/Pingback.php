@@ -11,6 +11,7 @@ namespace App\Http\Controllers;
 use App\Models\IpaymuLog;
 use App\Models\Paymentwall;
 use App\Models\User;
+use App\Services\IpaymuBroadcastService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
@@ -236,13 +237,16 @@ class Pingback extends Controller
             |
             */
 
+            $processedPayment = null;
+
             $result = DB::transaction(
                 function () use (
                     $trxId,
                     $status,
                     $statusCode,
                     $sid,
-                    $referenceId
+                    $referenceId,
+                    &$processedPayment
                 ) {
 
                     /*
@@ -571,10 +575,21 @@ Log::info('IPAYMU DATABASE UPDATE', [
                      * status_code = 1
                      */
 
+                    $processedPayment = $payment;
 
                     return 'success';
                 }
             );
+
+
+            /*
+             * Broadcast in-game hanya untuk transaksi yang baru berhasil,
+             * setelah database commit dan setelah response dikirim
+             * (socket game server bisa blocking tanpa timeout).
+             */
+            if ($processedPayment) {
+                app()->terminating(fn () => IpaymuBroadcastService::send($processedPayment));
+            }
 
 
             /*

@@ -238,6 +238,10 @@ class DonateController extends Controller
         }
 
         if (config('ipaymu.status') === true) {
+            foreach (['broadcast_enabled', 'discord_enabled', 'discord_mention_everyone'] as $switch) {
+                Config::write('ipaymu.' . $switch, $request->has($switch));
+            }
+
             $configs = $request->validate([
                 'va' => 'required|string',
                 'key' => 'required|string',
@@ -249,7 +253,12 @@ class DonateController extends Controller
                 'mingetbonus' => 'required|numeric',
                 'route' => 'required|string|min:6|max:30',
                 'promo_code' => 'nullable|string|max:255',     
-                'promo_bonus_percent' => 'nullable|numeric|min:0|max:100',                          
+                'promo_bonus_percent' => 'nullable|numeric|min:0|max:100',
+                // Tanda kutip & backslash ditolak karena nilai ditulis langsung ke config/ipaymu.php
+                'broadcast_channel' => 'required|integer|min:1|max:255',
+                'broadcast_message' => ['nullable', 'string', 'max:255', 'not_regex:/[\'"\\\\]/'],
+                'discord_webhook_url' => ['nullable', 'url', 'max:255', 'starts_with:https://discord.com/api/webhooks/,https://discordapp.com/api/webhooks/', 'not_regex:/[\'"\\\\]/'],
+                'discord_message' => ['nullable', 'string', 'max:1000', 'not_regex:/[\'"\\\\]/'],
             ]);
             if ($configs['maximum'] < $configs['minimum']) {
                 return redirect()->back()->with('error', __('donate.ipaymu.error.smalmax'));
