@@ -215,7 +215,7 @@ return [
         'discord_mention_everyone' => 'Mention @everyone',
         'discord_mention_everyone_desc' => 'Add an everyone mention to the Discord notification',
         'discord_webhook_url' => 'Discord Webhook URL',
-        'discord_webhook_url_desc' => 'Leave empty to use DISCORD_DONATION_WEBHOOK from the env file',
+        'discord_webhook_url_desc' => 'Webhook URL from the Discord channel settings. When empty, no notification is sent',
         'discord_message' => 'Discord Description Template',
         'discord_message_desc' => 'Leave empty to use the default description. Quotes are not allowed',
         'discord_note' => 'Discord is sent by the donation:discord scheduler every minute.',

@@ -324,7 +324,7 @@ class SendDiscordDonations extends Command
         if (
             !config('ipaymu.discord_enabled')
             ||
-            empty(config('ipaymu.discord_webhook_url') ?: config('discord.donation_webhook'))
+            empty(config('ipaymu.discord_webhook_url'))
         ) {
             return true;
         }

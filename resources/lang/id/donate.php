@@ -212,7 +212,7 @@ return [
         'discord_mention_everyone' => 'Mention @everyone',
         'discord_mention_everyone_desc' => 'Tambahkan mention everyone pada notifikasi Discord',
         'discord_webhook_url' => 'Discord Webhook URL',
-        'discord_webhook_url_desc' => 'Kosongkan untuk memakai DISCORD_DONATION_WEBHOOK dari file env',
+        'discord_webhook_url_desc' => 'Alamat webhook dari pengaturan channel Discord. Kalau kosong, notifikasi tidak dikirim',
         'discord_message' => 'Template Deskripsi Discord',
         'discord_message_desc' => 'Kosongkan untuk memakai deskripsi default. Tanda kutip tidak diperbolehkan',
         'discord_note' => 'Discord dikirim oleh scheduler donation:discord setiap menit.',

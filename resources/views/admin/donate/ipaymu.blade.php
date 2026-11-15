@@ -195,7 +195,7 @@
                         </div>
                         <div class="relative z-0 mb-6 w-full group">
                             <x-hrace009::input-with-popover id="broadcast_message" name="broadcast_message" maxlength="255"
-                                                            value="{{ config('ipaymu.broadcast_message') }}"
+                                                            value="{{ config('ipaymu.broadcast_message') ?: \App\Services\IpaymuBroadcastService::DEFAULT_MESSAGE }}"
                                                             placeholder=" "
                                                             :popover="__('donate.ipaymu.broadcast_message_desc')"/>
                             <x-hrace009::label for="broadcast_message">{{ __('donate.ipaymu.broadcast_message') }}</x-hrace009::label>
@@ -258,7 +258,7 @@
                     </div>
                     <div class="relative z-0 mb-6 w-full group">
                         <x-hrace009::input-with-popover id="discord_message" name="discord_message" maxlength="1000"
-                                                        value="{{ config('ipaymu.discord_message') }}"
+                                                        value="{{ config('ipaymu.discord_message') ?: \App\Services\DiscordDonationService::DEFAULT_MESSAGE }}"
                                                         placeholder=" "
                                                         :popover="__('donate.ipaymu.discord_message_desc')"/>
                         <x-hrace009::label for="discord_message">{{ __('donate.ipaymu.discord_message') }}</x-hrace009::label>
