@@ -19,8 +19,16 @@
             @endforeach
         </nav>
         <div class="pw-header-actions">
-            <a class="pw-login" href="{{ route('login') }}">Log in</a>
-            <a class="pw-button pw-button-small" href="{{ route('register') }}">Create account <span aria-hidden="true">↗</span></a>
+            @auth
+                <a class="pw-button pw-button-small" href="{{ route('app.dashboard') }}">Dashboard</a>
+                <form class="pw-logout" method="POST" action="{{ route('logout') }}">
+                    @csrf
+                    <button class="pw-login" type="submit">Log out</button>
+                </form>
+            @else
+                <a class="pw-login" href="{{ route('login') }}">Log in</a>
+                <a class="pw-button pw-button-small" href="{{ route('register') }}">Create account <span aria-hidden="true">↗</span></a>
+            @endauth
             <button class="pw-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="pw-mobile-nav">
                 <span></span><span></span>
             </button>
@@ -30,7 +38,15 @@
         @foreach($navLinks as $link)
             <a href="{{ $link['url'] }}" @if($link['active']) aria-current="page" @endif>{{ $link['label'] }}</a>
         @endforeach
-        <a href="{{ route('login') }}">Log in</a>
-        <a href="{{ route('register') }}">Create account</a>
+        @auth
+            <a href="{{ route('app.dashboard') }}">Dashboard</a>
+            <form class="pw-logout" method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button class="pw-login" type="submit">Log out</button>
+            </form>
+        @else
+            <a href="{{ route('login') }}">Log in</a>
+            <a href="{{ route('register') }}">Create account</a>
+        @endauth
     </nav>
 </header>
