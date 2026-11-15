@@ -14,8 +14,8 @@
     <script defer src="{{ asset('assets/js/etherna-landing.js') }}"></script>
 </head>
 <body class="pw-site">
-    <div id="pw-preloader" class="pw-preloader" aria-label="Loading Etherna Perfect World" role="status">
-        <span class="pw-loader-mark" aria-hidden="true">E</span>
+    <div id="pw-preloader" class="pw-preloader" aria-label="Loading {{ config('app.name') }}" role="status">
+        <span class="pw-loader-mark" aria-hidden="true">{{ config('app.name') }}</span>
         <span class="pw-loader-line" aria-hidden="true"></span>
     </div>
 
