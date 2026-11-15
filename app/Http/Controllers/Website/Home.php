@@ -49,8 +49,7 @@ class Home extends Controller
             ->get();
 
         return view('website.index', [
-            'news' => News::orderBy('id', 'desc')
-                ->whereNotIn('category', ['download', 'guide'])
+            'news' => News::latest()
                 ->limit(4)
                 ->get(),
 

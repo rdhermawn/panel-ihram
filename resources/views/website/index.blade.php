@@ -4,16 +4,16 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b0b0d">
-    <meta name="description" content="Enter the world of Etherna Perfect World. Download the client, explore the guide, and follow the latest player rankings.">
-    <title>Etherna Perfect World</title>
+    <meta name="description" content="Enter the world of Perfect World Aura. Download the client, explore the guide, and follow the latest player rankings.">
+    <title>Perfect World Aura</title>
     <link rel="icon" href="{{ asset('assets/img/favicon.svg') }}" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('assets/css/etherna-landing.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/aura-landing.css') }}">
     {{-- Runs before first paint so the preloader is either up from the start or never shown (once per browser session). --}}
     <script>(function (root) { root.classList.add('has-js'); try { if (sessionStorage.getItem('pw-preloader-seen')) root.classList.add('pw-preloader-seen'); else sessionStorage.setItem('pw-preloader-seen', '1'); } catch (e) {} })(document.documentElement);</script>
-    <script defer src="{{ asset('assets/js/etherna-landing.js') }}"></script>
+    <script defer src="{{ asset('assets/js/aura-landing.js') }}"></script>
 </head>
 <body class="pw-site">
     <div id="pw-preloader" class="pw-preloader" aria-label="Loading {{ config('app.name') }}" role="status">
@@ -35,12 +35,12 @@
                 <p class="pw-eyebrow"><span></span> A world beyond the horizon</p>
                 <h1 class="pw-hero-title" id="pw-hero-title">Your legend<br>begins <em>here.</em></h1>
                 <p class="pw-hero-subtitle"><span aria-hidden="true"></span> PERFECT WORLD · MMORPG</p>
-                <p class="pw-hero-tagline">Forge your path, find your people, and make a place for yourself in Etherna.</p>
+                <p class="pw-hero-tagline">Forge your path, find your people, and make a place for yourself in Aura.</p>
                 <div class="pw-hero-actions">
                     <a class="pw-button" href="/download">Enter the world <span aria-hidden="true">↗</span></a>
                     @if(config('pw-config.discord'))
                         <span class="pw-hero-divider" aria-hidden="true"></span>
-                        <a class="pw-social-button" href="{{ config('pw-config.discord') }}" target="_blank" rel="noopener noreferrer" aria-label="Join the Etherna Discord">
+                        <a class="pw-social-button" href="{{ config('pw-config.discord') }}" target="_blank" rel="noopener noreferrer" aria-label="Join the Aura Discord">
                             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 6.5h13A1.5 1.5 0 0 1 20 8v7a1.5 1.5 0 0 1-1.5 1.5h-4.1L10 20v-3.5H5.5A1.5 1.5 0 0 1 4 15V8a1.5 1.5 0 0 1 1.5-1.5Z"></path><circle cx="9" cy="11.5" r="1"></circle><circle cx="15" cy="11.5" r="1"></circle></svg>
                         </a>
                     @endif
@@ -85,7 +85,7 @@
             <div class="pw-container">
                 <div class="pw-section-heading" data-reveal>
                     <div><p class="pw-eyebrow"><span></span> Your next chapter</p><h2 id="world-title">A world to <em>make your own</em></h2></div>
-                    <p>Everything you need to begin your journey and find your place in Etherna.</p>
+                    <p>Everything you need to begin your journey and find your place in Aura.</p>
                 </div>
                 <div class="pw-feature-grid">
                     <a class="pw-feature-card" href="/download" data-reveal><span class="pw-feature-number">01</span><span class="pw-feature-icon" aria-hidden="true">↓</span><h3>Get the client</h3><p>Download the game and prepare to enter the world.</p><span class="pw-feature-arrow" aria-hidden="true">↗</span></a>
@@ -99,18 +99,18 @@
         <section class="pw-section pw-characters-section" aria-labelledby="characters-title">
             <div class="pw-container">
                 <div class="pw-section-heading" data-reveal>
-                    <div><p class="pw-eyebrow"><span></span> The heroes of Etherna</p><h2 id="characters-title">Choose your <em>path</em></h2></div>
+                    <div><p class="pw-eyebrow"><span></span> The heroes of Aura</p><h2 id="characters-title">Choose your <em>path</em></h2></div>
                     <div class="pw-carousel-controls" aria-label="Character carousel controls">
                         <button class="pw-social-button pw-carousel-button" type="button" data-carousel-prev aria-label="Show previous characters" disabled><span aria-hidden="true">←</span></button>
                         <button class="pw-social-button pw-carousel-button" type="button" data-carousel-next aria-label="Show next characters"><span aria-hidden="true">→</span></button>
                     </div>
                 </div>
                 <div class="pw-character-carousel" data-character-carousel>
-                    <div class="pw-character-track" id="character-track" tabindex="0" aria-label="Etherna character artwork" role="region">
+                    <div class="pw-character-track" id="character-track" tabindex="0" aria-label="Aura character artwork" role="region">
                         @for($character = 1; $character <= 14; $character++)
                             <div class="pw-character-card">
                                 <img class="pw-character-logo" src="{{ asset('assets/img/home-2/team/team-bg.png') }}" alt="" width="313" height="324" loading="lazy">
-                                <img class="pw-character-art" src="{{ asset('assets/img/home-2/team/' . $character . '.png') }}" alt="Etherna character {{ $character }}" width="298" height="407" loading="lazy">
+                                <img class="pw-character-art" src="{{ asset('assets/img/home-2/team/' . $character . '.png') }}" alt="Aura character {{ $character }}" width="298" height="407" loading="lazy">
                             </div>
                         @endfor
                     </div>
@@ -154,7 +154,7 @@
         <section class="pw-section pw-supporters-section" aria-labelledby="supporters-title">
             <div class="pw-container">
                 <div class="pw-section-heading" data-reveal>
-                    <div><p class="pw-eyebrow"><span></span> The keepers of Etherna</p><h2 id="supporters-title">Community <em>supporters</em></h2></div>
+                    <div><p class="pw-eyebrow"><span></span> The keepers of Aura</p><h2 id="supporters-title">Community <em>supporters</em></h2></div>
                     <p>{{ $monthLabel }} · thank you for keeping the world alive.</p>
                 </div>
                 <div class="pw-supporters-layout">
@@ -169,7 +169,7 @@
                         <div class="pw-list-heading"><span>RANK / SUPPORTER</span><span>STREAMER</span><span>CONTRIBUTION</span></div>
                         @forelse($topSpenders as $spender)
                             <div class="pw-spender-row">
-                                <span class="pw-rank-player"><span class="pw-rank-number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span><span class="pw-rank-name">{{ \Illuminate\Support\Str::limit($spender->name, 25, '') }}</span></span>
+                                <span class="pw-rank-player"><span class="pw-rank-number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span><span class="pw-rank-name">{{ \Illuminate\Support\Str::substr($spender->name, 0, max(1, min(3, mb_strlen($spender->name) - 1))) }}***</span></span>
                                 <span class="pw-spender-streamer">{{ $spender->streamer_name ?? '—' }}</span>
                                 <strong class="pw-rank-score">Rp {{ number_format($spender->total_money, 0, ',', '.') }}</strong>
                             </div>
@@ -198,9 +198,9 @@
 
     <footer class="pw-footer">
         <div class="pw-container pw-footer-main">
-            <a class="pw-brand" href="/" aria-label="Etherna Perfect World home">
+            <a class="pw-brand" href="/" aria-label="Perfect World Aura home">
                 <img src="{{ asset('assets/img/logo/logokecil.svg') }}" alt="">
-                <span><strong>ETHERNA</strong><small>PERFECT WORLD</small></span>
+                <span><strong>AURA</strong><small>PERFECT WORLD</small></span>
             </a>
             <p>A world of your own.<br>Find your legend among the clouds.</p>
             <nav class="pw-footer-links" aria-label="Footer navigation">
@@ -208,7 +208,7 @@
                 @if(config('pw-config.discord'))<a href="{{ config('pw-config.discord') }}" target="_blank" rel="noopener noreferrer">Discord ↗</a>@endif
             </nav>
         </div>
-        <div class="pw-container pw-footer-bottom"><span>© {{ date('Y') }} Etherna Perfect World</span><a href="#top" class="pw-back-top">Back to top ↑</a></div>
+        <div class="pw-container pw-footer-bottom"><span>© {{ date('Y') }} Perfect World Aura</span><a href="#top" class="pw-back-top">Back to top ↑</a></div>
     </footer>
     <a class="pw-top" href="#top" aria-label="Scroll to top">↑</a>
 </body>
