@@ -36,26 +36,26 @@ body.pw-auth-site {
     font: 400 15px/1.55 var(--pw-sans);
     text-align: center;
 }
-.pw-auth-passwords { display: grid; gap: 20px; min-width: 0; }
+.pw-auth-passwords { display: grid; gap: 16px; min-width: 0; }
 .pw-auth-passwords > div { min-width: 0; }
 
-.pw-auth-form { display: grid; gap: 20px; }
+.pw-auth-form { display: grid; gap: 16px; }
 .pw-auth-form input:not([type="checkbox"]):not([type="hidden"]),
 .pw-auth-form select,
 .pw-auth-form textarea {
     width: 100%;
-    min-height: 50px;
+    min-height: 44px;
     border: 1px solid rgba(243, 238, 231, .19);
     border-radius: 0;
     background: rgba(8, 8, 10, .72);
     color: var(--pw-paper);
-    font: 400 15px/1.4 var(--pw-sans);
+    font: 400 14px/1.4 var(--pw-sans);
     transition: border-color .18s ease, background-color .18s ease, box-shadow .18s ease;
 }
 
 .pw-auth-form input:not([type="checkbox"]):not([type="hidden"]),
 .pw-auth-form select,
-.pw-auth-form textarea { padding: 13px 15px; }
+.pw-auth-form textarea { padding: 10px 13px; }
 
 .pw-auth-form input::placeholder,
 .pw-auth-form textarea::placeholder { color: #aaa2a5; opacity: 1; }
