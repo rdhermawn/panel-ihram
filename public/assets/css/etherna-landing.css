@@ -31,17 +31,15 @@ img { display: block; max-width: 100%; }
 #pw-preloader { position: fixed; z-index: 1000; inset: 0; display: grid; place-content: center; justify-items: center; gap: 18px; background: radial-gradient(ellipse at 50% 120%, rgba(130,39,63,.32), transparent 60%), var(--pw-ink); transition: transform .8s cubic-bezier(.7,0,.2,1), visibility 0s linear .8s; }
 #pw-preloader::after { position: absolute; right: 0; bottom: 0; left: 0; height: 1px; background: var(--pw-gold); content: ''; opacity: .5; }
 #pw-preloader.is-done { transform: translateY(-100%); visibility: hidden; }
-.pw-loader-kicker { margin: 0; color: var(--pw-gold); font: 10px/1.4 var(--pw-mono); letter-spacing: .18em; text-transform: uppercase; animation: pw-loader-fade .5s ease both; }
 .pw-loader-mark { max-width: calc(100vw - 40px); color: var(--pw-paper); font: clamp(36px, 8vw, 72px)/1.1 var(--pw-serif); letter-spacing: -.02em; text-align: center; animation: pw-loader-write .7s cubic-bezier(.2,.7,.2,1) .1s both; }
 .pw-loader-line { width: 120px; height: 1px; overflow: hidden; background: var(--pw-line); }
 .pw-loader-line::after { display: block; width: 100%; height: 100%; background: var(--pw-red-light); content: ''; transform-origin: left; animation: pw-loader-fill .9s cubic-bezier(.4,0,.2,1) .15s both; }
 @keyframes pw-loader-write { from { clip-path: inset(0 100% 0 0); opacity: .4; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
 @keyframes pw-loader-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@keyframes pw-loader-fade { from { opacity: 0; } to { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) {
     #pw-preloader { transition: opacity .3s ease, visibility 0s linear .3s; }
     #pw-preloader.is-done { transform: none; opacity: 0; }
-    .pw-loader-kicker, .pw-loader-mark, .pw-loader-line::after { animation: none; }
+    .pw-loader-mark, .pw-loader-line::after { animation: none; }
 }
 
 .pw-header { position: absolute; z-index: 20; inset: 0 0 auto; color: white; }
@@ -80,16 +78,21 @@ button.pw-login { padding: 0; border: 0; background: none; font-family: inherit;
 /* Hero emblem: the game logo fills the empty right half. It arrives once after the preloader,
    a single light sweep crosses it, and on mouse devices it drifts with the cursor. No loop. */
 .pw-hero-emblem { position: absolute; z-index: 1; top: 50%; right: max(32px, calc((100% - 1240px) / 2 - 20px)); width: min(44vw, 640px); aspect-ratio: 1050 / 600; translate: calc(var(--pw-hx, 0) * -14px) calc(-50% + var(--pw-hy, 0) * -10px); transition: translate .6s cubic-bezier(.2,.7,.2,1); pointer-events: none; }
-.pw-hero-emblem img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 40px rgba(8,8,13,.75)); animation: pw-emblem-in 1.4s cubic-bezier(.2,.7,.2,1) 1.2s both; }
-.pw-hero-emblem-halo { position: absolute; inset: -12% 4%; background: radial-gradient(ellipse at 50% 48%, rgba(124,92,255,.28), rgba(200,67,81,.12) 40%, transparent 68%); translate: calc(var(--pw-hx, 0) * 10px) calc(var(--pw-hy, 0) * 8px); transition: translate .8s cubic-bezier(.2,.7,.2,1); animation: pw-emblem-halo 1.8s ease 1.1s both; }
-.pw-hero-emblem-shine { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 40%, rgba(255,245,235,.55) 50%, transparent 60%) no-repeat; background-size: 250% 100%; -webkit-mask: url('/assets/img/logo/logokecil.svg') center / contain no-repeat; mask: url('/assets/img/logo/logokecil.svg') center / contain no-repeat; mix-blend-mode: overlay; animation: pw-emblem-shine 1.6s ease-in-out 2.5s both; }
+.pw-hero-emblem img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 40px rgba(8,8,13,.75)); }
+.pw-hero-emblem-halo { position: absolute; inset: -12% 4%; background: radial-gradient(ellipse at 50% 48%, rgba(124,92,255,.28), rgba(200,67,81,.12) 40%, transparent 68%); translate: calc(var(--pw-hx, 0) * 10px) calc(var(--pw-hy, 0) * 8px); transition: translate .8s cubic-bezier(.2,.7,.2,1); }
+.pw-hero-emblem-shine { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 40%, rgba(255,245,235,.55) 50%, transparent 60%) no-repeat; background-size: 250% 100%; background-position: -50% 0; -webkit-mask: url('/assets/img/logo/logokecil.svg') center / contain no-repeat; mask: url('/assets/img/logo/logokecil.svg') center / contain no-repeat; mix-blend-mode: overlay; }
+html.has-js:not(.is-ready) .pw-hero-emblem { opacity: 0; }
+html.has-js.is-ready .pw-hero-emblem img { animation: pw-emblem-in 1.4s cubic-bezier(.2,.7,.2,1) .1s both; }
+html.has-js.is-ready .pw-hero-emblem-halo { animation: pw-emblem-halo 1.8s ease both; }
+html.has-js.is-ready .pw-hero-emblem-shine { animation: pw-emblem-shine 1.6s ease-in-out 1.2s both; }
 @keyframes pw-emblem-in { from { opacity: 0; transform: translateY(26px) scale(.92); filter: blur(10px) drop-shadow(0 24px 40px rgba(8,8,13,.75)); } to { opacity: 1; transform: none; filter: blur(0) drop-shadow(0 24px 40px rgba(8,8,13,.75)); } }
 @keyframes pw-emblem-halo { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
 @keyframes pw-emblem-shine { from { background-position: 100% 0; } to { background-position: -50% 0; } }
 @media (max-width: 1050px) { .pw-hero-emblem { display: none; } }
 @media (prefers-reduced-motion: reduce) {
+    html.has-js:not(.is-ready) .pw-hero-emblem { opacity: 1; }
     .pw-hero-emblem { translate: 0 -50%; transition: none; }
-    .pw-hero-emblem img, .pw-hero-emblem-halo { animation: none; }
+    html.has-js.is-ready .pw-hero-emblem img, html.has-js.is-ready .pw-hero-emblem-halo { animation: none; }
     .pw-hero-emblem-shine { display: none; }
 }
 .pw-hero-content { position: relative; z-index: 1; padding-top: 145px; padding-bottom: 105px; }
