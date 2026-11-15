@@ -19,35 +19,7 @@
         <span class="pw-loader-line" aria-hidden="true"></span>
     </div>
 
-    <header class="pw-header" id="top">
-        <div class="pw-header-inner">
-            <a class="pw-brand" href="/" aria-label="Etherna Perfect World home">
-                <img src="{{ asset('assets/img/logo/logokecil.svg') }}" alt="">
-                <span><strong>ETHERNA</strong><small>PERFECT WORLD</small></span>
-            </a>
-            <nav class="pw-nav" aria-label="Main navigation">
-                <a href="/">Home</a>
-                <a href="/download">Download</a>
-                <a href="/news">News</a>
-                <a href="{{ route('app.ranking.player', 'pvp') }}">Rankings</a>
-            </nav>
-            <div class="pw-header-actions">
-                <a class="pw-login" href="{{ route('login') }}">Log in</a>
-                <a class="pw-button pw-button-small" href="{{ route('register') }}">Create account <span aria-hidden="true">↗</span></a>
-                <button class="pw-nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="pw-mobile-nav">
-                    <span></span><span></span>
-                </button>
-            </div>
-        </div>
-        <nav class="pw-mobile-nav" id="pw-mobile-nav" aria-label="Mobile navigation" hidden>
-            <a href="/">Home</a>
-            <a href="/download">Download</a>
-            <a href="/news">News</a>
-            <a href="{{ route('app.ranking.player', 'pvp') }}">Rankings</a>
-            <a href="{{ route('login') }}">Log in</a>
-            <a href="{{ route('register') }}">Create account</a>
-        </nav>
-    </header>
+    @include('website.partials.header')
 
     <main>
         <section class="pw-hero" aria-labelledby="pw-hero-title">

@@ -43,6 +43,9 @@ img { display: block; max-width: 100%; }
 .pw-nav { display: flex; align-items: center; gap: clamp(22px, 3vw, 46px); margin-left: 5vw; }
 .pw-nav a, .pw-login { color: rgba(255,255,255,.78); font-size: 13px; transition: color .2s ease; }
 .pw-nav a:hover, .pw-login:hover { color: white; }
+.pw-nav a[aria-current="page"] { position: relative; color: white; }
+.pw-nav a[aria-current="page"]::after { position: absolute; right: 0; bottom: -8px; left: 0; height: 2px; background: var(--pw-red); content: ""; }
+.pw-mobile-nav a[aria-current="page"] { color: var(--pw-red-light); }
 .pw-header-actions { display: flex; align-items: center; gap: 25px; }
 .pw-button { display: inline-flex; min-height: 54px; align-items: center; justify-content: center; gap: 30px; padding: 0 23px; border: 1px solid var(--pw-red); background: var(--pw-red); color: white; font-size: 13px; font-weight: 600; transition: background .2s ease, border-color .2s ease, transform .2s ease; }
 .pw-button:hover { transform: translateY(-2px); border-color: var(--pw-red-light); background: var(--pw-red-light); }

@@ -10,38 +10,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('assets/css/etherna-landing.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/css/etherna-download.css') }}">
+    <script defer src="{{ asset('assets/js/etherna-landing.js') }}"></script>
 </head>
-<body class="pw-download-site">
-    <header class="pw-download-header" id="top">
-        <div class="pw-download-header-inner">
-            <a class="pw-download-brand" href="/" aria-label="{{ config('download.labels.brand') }} {{ config('download.labels.game') }} {{ config('download.navigation.home') }}">
-                <img src="{{ asset('assets/img/logo/logokecil.svg') }}" alt="">
-                <span><strong>{{ config('download.labels.brand') }}</strong><small>{{ config('download.labels.game') }}</small></span>
-            </a>
-            <nav class="pw-download-nav" aria-label="{{ config('download.navigation.main_label') }}">
-                <a href="/">{{ config('download.navigation.home') }}</a>
-                <a href="/download" aria-current="page">{{ config('download.navigation.download') }}</a>
-                <a href="{{ url('/news') }}">{{ config('download.navigation.news') }}</a>
-                <a href="{{ route('app.ranking.player', 'pvp') }}">{{ config('download.navigation.rankings') }}</a>
-            </nav>
-            <div class="pw-download-actions">
-                <a class="pw-download-login" href="{{ route('login') }}">{{ config('download.navigation.login') }}</a>
-                <a class="pw-download-button pw-download-button-small" href="{{ route('register') }}">{{ config('download.navigation.register') }} <span aria-hidden="true">↗</span></a>
-                <details class="pw-download-menu">
-                    <summary aria-label="{{ config('download.navigation.open_menu') }}"><span></span><span></span></summary>
-                    <nav aria-label="{{ config('download.navigation.mobile_label') }}">
-                        <a href="/">{{ config('download.navigation.home') }}</a>
-                        <a href="/download" aria-current="page">{{ config('download.navigation.download') }}</a>
-                        <a href="{{ url('/news') }}">{{ config('download.navigation.news') }}</a>
-                        <a href="{{ route('app.ranking.player', 'pvp') }}">{{ config('download.navigation.rankings') }}</a>
-                        <a href="{{ route('login') }}">{{ config('download.navigation.login') }}</a>
-                        <a href="{{ route('register') }}">{{ config('download.navigation.register') }}</a>
-                    </nav>
-                </details>
-            </div>
-        </div>
-    </header>
+<body class="pw-site pw-download-site">
+    @include('website.partials.header')
 
     <main class="pw-download-main">
         <section class="pw-download-intro" aria-labelledby="pw-download-title">
