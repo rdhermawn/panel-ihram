@@ -1,11 +1,33 @@
-document.documentElement.classList.add('has-js');
-
 const preloader = document.getElementById('pw-preloader');
-const hidePreloader = () => preloader?.classList.add('is-done');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let preloaderSeen = false;
+if (preloader) {
+    try {
+        preloaderSeen = sessionStorage.getItem('pw-preloader-seen') === '1';
+        sessionStorage.setItem('pw-preloader-seen', '1');
+    } catch {}
+}
 
-// The script is deferred, so the DOM is ready: lift the cover once the name has been written in
-// (about 1s) instead of waiting for every image. Reduced motion has nothing to watch, so it goes at once.
-window.setTimeout(hidePreloader, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 150 : 1000);
+if (!preloader || preloaderSeen) {
+    preloader?.remove();
+    document.documentElement.classList.add('is-ready');
+} else {
+    const coveredContent = document.querySelectorAll('.pw-header, main, footer, .pw-top');
+    coveredContent.forEach((element) => { element.inert = true; });
+    if (reducedMotion) document.documentElement.classList.add('is-ready');
+    window.setTimeout(() => {
+        preloader.classList.add('is-done');
+        document.documentElement.classList.add('is-ready');
+        const releaseContent = () => {
+            coveredContent.forEach((element) => { element.inert = false; });
+        };
+        preloader.addEventListener('transitionend', (event) => {
+            if (event.target === preloader && event.propertyName === (reducedMotion ? 'opacity' : 'transform')) releaseContent();
+        });
+        window.setTimeout(releaseContent, reducedMotion ? 350 : 850);
+    }, reducedMotion ? 150 : 700);
+}
+document.documentElement.classList.add('has-js');
 
 const menuButton = document.querySelector('.pw-nav-toggle');
 const mobileMenu = document.getElementById('pw-mobile-nav');
