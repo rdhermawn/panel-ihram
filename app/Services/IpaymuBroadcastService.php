@@ -22,9 +22,7 @@ class IpaymuBroadcastService
         }
 
         try {
-            $user = User::find($log->user_id);
-
-            $playerName = trim($user->truename ?? '') ?: (trim($user->name ?? '') ?: 'User #' . $log->user_id);
+            $playerName = CharacterNameResolver::forUser((int) $log->user_id);
 
             $coin = (float) $log->amount;
             if (config('ipaymu.double')) {

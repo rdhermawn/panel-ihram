@@ -337,31 +337,9 @@ class SendDiscordDonations extends Command
             |--------------------------------------------------------------------------
             */
 
-            $user = User::find(
-    $transaction->user_id
-);
-
-if ($user) {
-
-    if (!empty(trim($user->truename ?? ''))) {
-
-        $donorName = $user->truename;
-
-    } elseif (!empty(trim($user->name ?? ''))) {
-
-        $donorName = $user->name;
-
-    } else {
-
-        $donorName = 'User #' . $transaction->user_id;
-
-    }
-
-} else {
-
-    $donorName = 'User #' . $transaction->user_id;
-
-}
+            $donorName = \App\Services\CharacterNameResolver::forUser(
+                (int) $transaction->user_id
+            );
 
 
             /*
