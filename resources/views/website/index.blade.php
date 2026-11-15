@@ -139,7 +139,7 @@
                             <strong class="pw-rank-score">{{ number_format($rank->pk_count) }}</strong>
                         </div>
                     @empty
-                        <p class="pw-empty">No player ranking data is available yet.</p>
+                        <p class="pw-empty pw-empty-row">No player ranking data is available yet.</p>
                     @endforelse
                 </div>
             </div>
@@ -168,7 +168,7 @@
                                 <strong class="pw-rank-score">Rp {{ number_format($spender->total_money, 0, ',', '.') }}</strong>
                             </div>
                         @empty
-                            <p class="pw-empty">No supporters have been listed this month.</p>
+                            <p class="pw-empty pw-empty-row">No supporters have been listed this month.</p>
                         @endforelse
                     </div>
                 </div>
