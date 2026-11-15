@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\News;
-use App\Models\User;
 use App\Models\Player;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -40,17 +39,20 @@ class Home extends Controller
             ->whereBetween('created_at', [$startOfMonth, $endOfMonth])
             ->sum('money');
 
+        // TOP 10 TOTAL KILL
+        $ranks = Player::subtype('pvp')
+            ->limit(10)
+            ->get();
+
         return view('website.index', [
             'news' => News::orderBy('id', 'desc')
                 ->whereNotIn('category', ['download', 'guide'])
-                ->paginate(3),
-
-            'user' => new User(),
-
-            // TOP 10 TOTAL KILL
-            'ranks' => Player::subtype('pvp')
-                ->limit(10)
+                ->limit(4)
                 ->get(),
+
+            'ranks' => $ranks,
+            'spouseNames' => Player::whereIn('id', $ranks->pluck('spouse')->filter())
+                ->pluck('name', 'id'),
 
             // TOP 10 SPENDER
             'topSpenders' => $topSpenders,
@@ -58,8 +60,7 @@ class Home extends Controller
             // TOTAL SPENDER BULAN INI
             'totalMoneyAllSpenders' => $totalMoneyAllSpenders,
 
-            'bulan' => $bulan,
-            'tahun' => $tahun,
+            'monthLabel' => $startOfMonth->translatedFormat('F Y'),
         ]);
     }
 }
