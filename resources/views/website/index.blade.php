@@ -147,7 +147,12 @@
                                 <strong class="pw-rank-score">Rp {{ number_format($spender->total_money, 0, ',', '.') }}</strong>
                             </div>
                         @empty
-                            <p class="pw-empty pw-empty-row">No supporters have been listed this month.</p>
+                            <div class="pw-supporters-empty">
+                                <span class="pw-supporters-empty-crest" aria-hidden="true"><svg viewBox="0 0 64 64" width="44" height="44" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M32 4 56 14v18c0 14-10 23-24 28C18 55 8 46 8 32V14Z"/><path d="m32 20 4 8 9 1-7 6 2 9-8-5-8 5 2-9-7-6 9-1Z"/></svg></span>
+                                <p class="pw-eyebrow"><span></span> Awaiting heroes</p>
+                                <h3>No supporters yet this month.</h3>
+                                <p>The first names of {{ $monthLabel }} will be carved here.</p>
+                            </div>
                         @endforelse
                     </div>
                 </div>
