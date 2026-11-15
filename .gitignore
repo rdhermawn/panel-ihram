@@ -34,3 +34,5 @@
 *.php2
 /ers = AppModelsUser__all();
 /ID
+/output
+/.playwright-cli
