@@ -143,7 +143,7 @@ return [
     'navigation' => [
         'home' => 'Home',
         'download' => 'Download',
-        'guide' => 'Guide',
+        'news' => 'News',
         'rankings' => 'Rankings',
         'login' => 'Log in',
         'register' => 'Create account',

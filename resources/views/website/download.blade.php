@@ -22,7 +22,7 @@
             <nav class="pw-download-nav" aria-label="{{ config('download.navigation.main_label') }}">
                 <a href="/">{{ config('download.navigation.home') }}</a>
                 <a href="/download" aria-current="page">{{ config('download.navigation.download') }}</a>
-                <a href="/guide">{{ config('download.navigation.guide') }}</a>
+                <a href="{{ url('/news') }}">{{ config('download.navigation.news') }}</a>
                 <a href="{{ route('app.ranking.player', 'pvp') }}">{{ config('download.navigation.rankings') }}</a>
             </nav>
             <div class="pw-download-actions">
@@ -33,7 +33,7 @@
                     <nav aria-label="{{ config('download.navigation.mobile_label') }}">
                         <a href="/">{{ config('download.navigation.home') }}</a>
                         <a href="/download" aria-current="page">{{ config('download.navigation.download') }}</a>
-                        <a href="/guide">{{ config('download.navigation.guide') }}</a>
+                        <a href="{{ url('/news') }}">{{ config('download.navigation.news') }}</a>
                         <a href="{{ route('app.ranking.player', 'pvp') }}">{{ config('download.navigation.rankings') }}</a>
                         <a href="{{ route('login') }}">{{ config('download.navigation.login') }}</a>
                         <a href="{{ route('register') }}">{{ config('download.navigation.register') }}</a>
@@ -183,7 +183,7 @@
             <p>{{ config('download.footer.tagline') }}</p>
             <nav aria-label="{{ config('download.navigation.footer_label') }}">
                 <a href="/download">{{ config('download.navigation.download') }}</a>
-                <a href="/guide">{{ config('download.navigation.guide') }}</a>
+                <a href="{{ url('/news') }}">{{ config('download.navigation.news') }}</a>
                 <a href="{{ route('app.ranking.player', 'pvp') }}">{{ config('download.navigation.rankings') }}</a>
                 @if(config('download.discord_nav'))
                     <a href="{{ config('download.discord_nav') }}" target="_blank" rel="noopener noreferrer">{{ config('download.footer.discord') }} <span aria-hidden="true">↗</span></a>
