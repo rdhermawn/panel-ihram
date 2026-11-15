@@ -91,6 +91,28 @@
                 </div>
             </div>
         </section>
+        <section class="pw-section pw-characters-section" aria-labelledby="characters-title">
+            <div class="pw-container">
+                <div class="pw-section-heading" data-reveal>
+                    <div><p class="pw-eyebrow"><span></span> The heroes of Etherna</p><h2 id="characters-title">Choose your <em>path</em></h2></div>
+                    <div class="pw-carousel-controls" aria-label="Character carousel controls">
+                        <button class="pw-social-button pw-carousel-button" type="button" data-carousel-prev aria-label="Show previous characters" disabled><span aria-hidden="true">←</span></button>
+                        <button class="pw-social-button pw-carousel-button" type="button" data-carousel-next aria-label="Show next characters"><span aria-hidden="true">→</span></button>
+                    </div>
+                </div>
+                <div class="pw-character-carousel" data-character-carousel>
+                    <div class="pw-character-track" id="character-track" tabindex="0" aria-label="Etherna character artwork" role="region">
+                        @for($character = 1; $character <= 14; $character++)
+                            <div class="pw-character-card">
+                                <img class="pw-character-logo" src="{{ asset('assets/img/home-2/team/team-bg.png') }}" alt="" width="313" height="324" loading="lazy">
+                                <img class="pw-character-art" src="{{ asset('assets/img/home-2/team/' . $character . '.png') }}" alt="Etherna character {{ $character }}" width="298" height="407" loading="lazy">
+                            </div>
+                        @endfor
+                    </div>
+                    <div class="pw-carousel-progress" role="progressbar" aria-label="Character carousel position" aria-valuemin="1" aria-valuemax="14" aria-valuenow="1"><span></span></div>
+                </div>
+            </div>
+        </section>
 
         <section class="pw-section pw-rankings-section" aria-labelledby="ranking-title">
             <div class="pw-container">

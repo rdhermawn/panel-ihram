@@ -54,3 +54,30 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('Intersec
 
     revealItems.forEach((item) => revealObserver.observe(item));
 }
+
+const carousel = document.querySelector('[data-character-carousel]');
+if (carousel) {
+    const track = carousel.querySelector('.pw-character-track');
+    const cards = [...track.children];
+    const previous = carousel.parentElement.querySelector('[data-carousel-prev]');
+    const next = carousel.parentElement.querySelector('[data-carousel-next]');
+    const progress = carousel.querySelector('.pw-carousel-progress');
+    const progressFill = progress.querySelector('span');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    const updateCarousel = () => {
+        const maxScroll = track.scrollWidth - track.clientWidth;
+        const atEnd = track.scrollLeft >= maxScroll - 1;
+        const index = atEnd ? cards.length : Math.min(cards.length, Math.round(track.scrollLeft / (cards[1].offsetLeft - cards[0].offsetLeft)) + 1);
+        previous.disabled = track.scrollLeft <= 1;
+        next.disabled = atEnd;
+        progress.setAttribute('aria-valuenow', String(index));
+        progressFill.style.width = `${maxScroll ? (track.scrollLeft / maxScroll) * 100 : 100}%`;
+    };
+
+    previous.addEventListener('click', () => track.scrollBy({ left: -(cards[1].offsetLeft - cards[0].offsetLeft), behavior: reduceMotion.matches ? 'instant' : 'smooth' }));
+    next.addEventListener('click', () => track.scrollBy({ left: cards[1].offsetLeft - cards[0].offsetLeft, behavior: reduceMotion.matches ? 'instant' : 'smooth' }));
+    track.addEventListener('scroll', updateCarousel, { passive: true });
+    window.addEventListener('resize', updateCarousel);
+    updateCarousel();
+}
