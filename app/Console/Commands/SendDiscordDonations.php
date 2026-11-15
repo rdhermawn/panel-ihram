@@ -379,35 +379,15 @@ if ($user) {
                 )
             ) {
 
-                $streamers = config(
-                    'ipaymu.streamers',
-                    []
-                );
-
-
-                $streamer = collect(
-                    $streamers
-                )->first(
-                    function ($item) use ($transaction) {
-
-                        return
-                            (string) ($item['id'] ?? '')
-                            ===
-                            (string) $transaction->streamer_id;
-                    }
-                );
+                $streamer = \App\Models\Streamer::where(
+                    'user_id',
+                    $transaction->streamer_id
+                )->first();
 
 
                 if ($streamer) {
 
-                    $streamerCode =
-                        $streamer['streamer_code']
-                        ??
-                        $streamer['code']
-                        ??
-                        $streamer['name']
-                        ??
-                        '-';
+                    $streamerCode = $streamer->code;
                 }
             }
 

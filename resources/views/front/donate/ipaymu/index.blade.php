@@ -131,7 +131,7 @@
             const promoCode = '{{ config('ipaymu.promo_code') }}';
             const promoBonusPercent = parseFloat('{{ config('ipaymu.promo_bonus_percent') }}');
             const guilds = @json(config('ipaymu.guild', []));
-            const streamers = @json(config('ipaymu.streamers', []));
+            const streamers = @json(\App\Models\Streamer::get(['code as streamer_code', 'bonus_percent as streamer_bonus_percent']));
             const getMinBonus = parseFloat('{{ config('ipaymu.bonusess', 0) }}');
             const minGetBonus = parseInt('{{ config('ipaymu.mingetbonus', 0) }}');
 

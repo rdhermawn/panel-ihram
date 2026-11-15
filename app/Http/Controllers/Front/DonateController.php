@@ -809,38 +809,10 @@ class DonateController extends Controller
             ) === 'streamer'
         ) {
 
-            $inputStreamerCode =
-                strtolower(
-                    trim(
-                        $request->input(
-                            'streamer_code'
-                        )
-                    )
-                );
-
-
-            $streamers = config(
-                'ipaymu.streamers'
-            );
-
-
-            $validStreamer = collect(
-                $streamers
-            )->first(
-                function ($streamer) use (
-                    $inputStreamerCode
-                ) {
-
-                    return strtolower(
-                        trim(
-                            $streamer[
-                                'streamer_code'
-                            ]
-                        )
-                    )
-                    ===
-                    $inputStreamerCode;
-                }
+            $validStreamer = \App\Models\Streamer::findByCode(
+                $request->input(
+                    'streamer_code'
+                )
             );
 
 
@@ -850,16 +822,12 @@ class DonateController extends Controller
                     $vcAmount
                     *
                     (
-                        $validStreamer[
-                            'streamer_bonus_percent'
-                        ] / 100
+                        $validStreamer->bonus_percent / 100
                     );
 
 
                 $streamerId =
-                    $validStreamer[
-                        'id'
-                    ];
+                    $validStreamer->user_id;
 
 
                 \Log::info(

@@ -131,7 +131,14 @@ class DonateLink extends Component
             $lightHistory = 'text-gray-400';
         }
 
+        $isStreamer = request()->routeIs('admin.donate.streamer.*');
+        if ($isStreamer) {
+            $status = 'true';
+        }
+
         return view('components.hrace009.admin.donate-link', [
+            'textStreamer' => $isStreamer ? '700' : '400',
+            'lightStreamer' => $isStreamer ? 'text-light' : 'text-gray-400',
             'status' => $status,
             'textPaymentwall' => $textPaymentwall,
             'lightPaymentwall' => $lightPaymentwall,

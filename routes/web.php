@@ -442,6 +442,10 @@ Route::post('{id}/clone', [ShopController::class, 'cloneItem'])->name('shop.clon
             'as' => 'admin.donate.history',
             'uses' => 'App\Http\Controllers\Admin\DonateController@getHistory'
         ]);
+
+        Route::resource('streamer', \App\Http\Controllers\Admin\StreamerController::class)
+            ->except(['create', 'show'])
+            ->names('admin.donate.streamer');
     });
 
 Route::resource('voucher', VoucherController::class)->middleware('voucher');

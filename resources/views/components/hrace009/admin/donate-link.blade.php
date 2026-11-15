@@ -59,6 +59,13 @@
             {{ __('donate.ipaymu.title') }}
         </a>
         <a
+            href="{{ route('admin.donate.streamer.index') }}"
+            role="menuitem"
+            class="block p-2 text-sm text-gray-{{ $textStreamer }} transition-colors duration-200 rounded-md dark:{{ $lightStreamer }} dark:hover:text-light hover:text-gray-700"
+        >
+            {{ __('donate.streamer.title') }}
+        </a>
+        <a
             href="{{ route('admin.donate.paymentwall') }}"
             role="menuitem"
             class="block p-2 text-sm text-gray-{{ $textPaymentwall }} transition-colors duration-200 rounded-md dark:{{ $lightPaymentwall }} dark:hover:text-light hover:text-gray-700"
