@@ -11,6 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Forum&family=Hanken+Grotesk:wght@400;500;600;700&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('assets/css/etherna-landing.css') }}">
+    {{-- Runs before first paint so the preloader is either up from the start or never shown (once per browser session). --}}
+    <script>(function (root) { root.classList.add('has-js'); try { if (sessionStorage.getItem('pw-preloader-seen')) root.classList.add('pw-preloader-seen'); else sessionStorage.setItem('pw-preloader-seen', '1'); } catch (e) {} })(document.documentElement);</script>
     <script defer src="{{ asset('assets/js/etherna-landing.js') }}"></script>
 </head>
 <body class="pw-site">

@@ -1,4 +1,4 @@
-html:not(.has-js) #pw-preloader { display: none; }
+html:not(.has-js) #pw-preloader, html.pw-preloader-seen #pw-preloader { display: none; }
 
 :root {
     color-scheme: dark;
@@ -36,11 +36,8 @@ img { display: block; max-width: 100%; }
 .pw-loader-line::after { display: block; width: 100%; height: 100%; background: var(--pw-red-light); content: ''; transform-origin: left; animation: pw-loader-fill .9s cubic-bezier(.4,0,.2,1) .15s both; }
 @keyframes pw-loader-write { from { clip-path: inset(0 100% 0 0); opacity: .4; } to { clip-path: inset(0 0 0 0); opacity: 1; } }
 @keyframes pw-loader-fill { from { transform: scaleX(0); } to { transform: scaleX(1); } }
-@media (prefers-reduced-motion: reduce) {
-    #pw-preloader { transition: opacity .3s ease, visibility 0s linear .3s; }
-    #pw-preloader.is-done { transform: none; opacity: 0; }
-    .pw-loader-mark, .pw-loader-line::after { animation: none; }
-}
+/* Reduced motion: the site-wide rule near the end of this file already cuts every animation and transition short. */
+@media (prefers-reduced-motion: reduce) { #pw-preloader.is-done { transform: none; opacity: 0; } }
 
 .pw-header { position: absolute; z-index: 20; inset: 0 0 auto; color: white; }
 .pw-header-inner { display: flex; min-height: 92px; align-items: center; justify-content: space-between; width: min(1360px, calc(100% - 80px)); margin-inline: auto; border-bottom: 1px solid rgba(255,255,255,.2); }
@@ -89,12 +86,7 @@ html.has-js.is-ready .pw-hero-emblem-shine { animation: pw-emblem-shine 1.6s eas
 @keyframes pw-emblem-halo { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
 @keyframes pw-emblem-shine { from { background-position: 100% 0; } to { background-position: -50% 0; } }
 @media (max-width: 1050px) { .pw-hero-emblem { display: none; } }
-@media (prefers-reduced-motion: reduce) {
-    html.has-js:not(.is-ready) .pw-hero-emblem { opacity: 1; }
-    .pw-hero-emblem { translate: 0 -50%; transition: none; }
-    html.has-js.is-ready .pw-hero-emblem img, html.has-js.is-ready .pw-hero-emblem-halo { animation: none; }
-    .pw-hero-emblem-shine { display: none; }
-}
+@media (prefers-reduced-motion: reduce) { .pw-hero-emblem-shine { display: none; } }
 .pw-hero-content { position: relative; z-index: 1; padding-top: 145px; padding-bottom: 105px; }
 .pw-hero-content > * { max-width: 640px; margin-left: 0; }
 .pw-eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 19px; color: var(--pw-gold); font: 10px/1.4 var(--pw-mono); letter-spacing: .17em; text-transform: uppercase; }

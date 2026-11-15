@@ -1,33 +1,26 @@
-const preloader = document.getElementById('pw-preloader');
-const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-let preloaderSeen = false;
-if (preloader) {
-    try {
-        preloaderSeen = sessionStorage.getItem('pw-preloader-seen') === '1';
-        sessionStorage.setItem('pw-preloader-seen', '1');
-    } catch {}
-}
+const root = document.documentElement;
+const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+// The landing sets these classes in <head> so the cover is up before first paint; other pages get has-js here.
+root.classList.add('has-js');
 
-if (!preloader || preloaderSeen) {
+const preloader = document.getElementById('pw-preloader');
+if (!preloader || root.classList.contains('pw-preloader-seen')) {
     preloader?.remove();
-    document.documentElement.classList.add('is-ready');
+    root.classList.add('is-ready');
 } else {
-    const coveredContent = document.querySelectorAll('.pw-header, main, footer, .pw-top');
-    coveredContent.forEach((element) => { element.inert = true; });
-    if (reducedMotion) document.documentElement.classList.add('is-ready');
+    // Everything behind the cover stays out of the Tab order until it has lifted.
+    const covered = [...document.body.children].filter((element) => element !== preloader);
+    covered.forEach((element) => { element.inert = true; });
     window.setTimeout(() => {
         preloader.classList.add('is-done');
-        document.documentElement.classList.add('is-ready');
-        const releaseContent = () => {
-            coveredContent.forEach((element) => { element.inert = false; });
-        };
-        preloader.addEventListener('transitionend', (event) => {
-            if (event.target === preloader && event.propertyName === (reducedMotion ? 'opacity' : 'transform')) releaseContent();
-        });
-        window.setTimeout(releaseContent, reducedMotion ? 350 : 850);
-    }, reducedMotion ? 150 : 700);
+        root.classList.add('is-ready');
+        // 800ms = the curtain's transform transition in etherna-landing.css.
+        window.setTimeout(() => {
+            covered.forEach((element) => { element.inert = false; });
+            preloader.remove();
+        }, reduceMotion.matches ? 0 : 800);
+    }, reduceMotion.matches ? 150 : 700);
 }
-document.documentElement.classList.add('has-js');
 
 const menuButton = document.querySelector('.pw-nav-toggle');
 const mobileMenu = document.getElementById('pw-mobile-nav');
@@ -63,7 +56,7 @@ if (menuButton && mobileMenu) {
 }
 
 const revealItems = document.querySelectorAll('[data-reveal]');
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('IntersectionObserver' in window)) {
+if (reduceMotion.matches || !('IntersectionObserver' in window)) {
     revealItems.forEach((item) => item.classList.add('is-visible'));
 } else {
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -80,7 +73,7 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('Intersec
 
 // Hero emblem drifts against the cursor on mouse devices, giving the logo depth over the backdrop.
 const hero = document.querySelector('.pw-hero');
-if (hero?.querySelector('.pw-hero-emblem') && window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
+if (hero?.querySelector('.pw-hero-emblem') && !reduceMotion.matches && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
     hero.addEventListener('pointermove', (event) => {
         const box = hero.getBoundingClientRect();
         hero.style.setProperty('--pw-hx', (((event.clientX - box.left) / box.width) * 2 - 1).toFixed(3));
@@ -100,7 +93,6 @@ if (carousel) {
     const next = carousel.parentElement.querySelector('[data-carousel-next]');
     const progress = carousel.querySelector('.pw-carousel-progress');
     const progressFill = progress.querySelector('span');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
     const updateCarousel = () => {
         const maxScroll = track.scrollWidth - track.clientWidth;
