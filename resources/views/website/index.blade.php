@@ -55,20 +55,26 @@
             <div class="pw-hero-content pw-container">
                 <p class="pw-eyebrow"><span></span> A world beyond the horizon</p>
                 <h1 class="pw-hero-title" id="pw-hero-title">Your legend<br>begins <em>here.</em></h1>
-                <p class="pw-hero-subtitle">Step into Etherna Perfect World. Find your path, forge your story, and meet us among the clouds.</p>
+                <p class="pw-hero-subtitle"><span aria-hidden="true"></span> PERFECT WORLD · MMORPG</p>
+                <p class="pw-hero-tagline">Forge your path, find your people, and make a place for yourself in Etherna.</p>
                 <div class="pw-hero-actions">
                     <a class="pw-button" href="/download">Enter the world <span aria-hidden="true">↗</span></a>
-                    <a class="pw-text-link" href="/guide">Discover the guide <span aria-hidden="true">→</span></a>
+                    @if(config('pw-config.discord'))
+                        <span class="pw-hero-divider" aria-hidden="true"></span>
+                        <a class="pw-social-button" href="{{ config('pw-config.discord') }}" target="_blank" rel="noopener noreferrer" aria-label="Join the Etherna Discord">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 6.5h13A1.5 1.5 0 0 1 20 8v7a1.5 1.5 0 0 1-1.5 1.5h-4.1L10 20v-3.5H5.5A1.5 1.5 0 0 1 4 15V8a1.5 1.5 0 0 1 1.5-1.5Z"></path><circle cx="9" cy="11.5" r="1"></circle><circle cx="15" cy="11.5" r="1"></circle></svg>
+                        </a>
+                    @endif
                 </div>
-                <div class="pw-hero-caption"><span>01 / 04</span><span>PERFECT WORLD · ETHERNA</span><span>SCROLL TO EXPLORE ↓</span></div>
             </div>
         </section>
 
-        <section class="pw-stats pw-container" aria-label="Server highlights">
-            <div class="pw-stat"><span class="pw-stat-value">{{ $ranks->count() }}</span><span class="pw-stat-label">Players ranked</span></div>
-            <div class="pw-stat"><span class="pw-stat-value">{{ $ranks->first() ? number_format($ranks->first()->pk_count) : '—' }}</span><span class="pw-stat-label">Top PvP kills</span></div>
-            <div class="pw-stat"><span class="pw-stat-value">{{ $topSpenders->count() }}</span><span class="pw-stat-label">Featured supporters</span></div>
-            <div class="pw-stat"><span class="pw-stat-value">{{ $news->count() }}</span><span class="pw-stat-label">Latest dispatches</span></div>
+        <section class="pw-stats pw-container" aria-label="Server information">
+            {{-- PLACEHOLDER server metadata: replace these four values with confirmed live details. --}}
+            <div class="pw-stat"><span class="pw-stat-label pw-stat-label-online"><i aria-hidden="true"></i>Online</span><span class="pw-stat-value">1,000+</span></div>
+            <div class="pw-stat"><span class="pw-stat-label">Version</span><span class="pw-stat-value">v1.0</span></div>
+            <div class="pw-stat"><span class="pw-stat-label">Wipes</span><span class="pw-stat-value">TBA</span></div>
+            <div class="pw-stat"><span class="pw-stat-label">Region</span><span class="pw-stat-value">SEA</span></div>
         </section>
 
         <section class="pw-section pw-news-section" id="news" aria-labelledby="news-title">
