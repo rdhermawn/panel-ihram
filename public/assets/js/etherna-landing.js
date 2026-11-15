@@ -55,6 +55,20 @@ if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !('Intersec
     revealItems.forEach((item) => revealObserver.observe(item));
 }
 
+// Hero emblem drifts against the cursor on mouse devices, giving the logo depth over the backdrop.
+const hero = document.querySelector('.pw-hero');
+if (hero?.querySelector('.pw-hero-emblem') && window.matchMedia('(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)').matches) {
+    hero.addEventListener('pointermove', (event) => {
+        const box = hero.getBoundingClientRect();
+        hero.style.setProperty('--pw-hx', (((event.clientX - box.left) / box.width) * 2 - 1).toFixed(3));
+        hero.style.setProperty('--pw-hy', (((event.clientY - box.top) / box.height) * 2 - 1).toFixed(3));
+    });
+    hero.addEventListener('pointerleave', () => {
+        hero.style.removeProperty('--pw-hx');
+        hero.style.removeProperty('--pw-hy');
+    });
+}
+
 const carousel = document.querySelector('[data-character-carousel]');
 if (carousel) {
     const track = carousel.querySelector('.pw-character-track');

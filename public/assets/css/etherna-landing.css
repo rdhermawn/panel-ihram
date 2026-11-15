@@ -63,6 +63,21 @@ img { display: block; max-width: 100%; }
 .pw-hero { position: relative; display: flex; min-height: max(720px, 100svh); align-items: center; overflow: hidden; background: #0b0b11; }
 .pw-hero-image { position: absolute; inset: 0; background-image: linear-gradient(90deg, rgba(8,8,13,.995) 0%, rgba(8,8,13,.995) 48%, rgba(8,8,13,.82) 62%, rgba(8,8,13,.22) 100%), linear-gradient(0deg, rgba(8,8,13,.8), transparent 42%), url('/assets/img/home-2/hero/hero-bg.jpg'); background-size: cover; background-position: right center; }
 .pw-hero::after { position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse at 82% 55%, rgba(127,36,62,.15), transparent 36%); content: ''; }
+/* Hero emblem: the game logo fills the empty right half. It arrives once after the preloader,
+   a single light sweep crosses it, and on mouse devices it drifts with the cursor. No loop. */
+.pw-hero-emblem { position: absolute; z-index: 1; top: 50%; right: max(32px, calc((100% - 1240px) / 2 - 20px)); width: min(44vw, 640px); aspect-ratio: 1050 / 600; translate: calc(var(--pw-hx, 0) * -14px) calc(-50% + var(--pw-hy, 0) * -10px); transition: translate .6s cubic-bezier(.2,.7,.2,1); pointer-events: none; }
+.pw-hero-emblem img { position: relative; display: block; width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(0 24px 40px rgba(8,8,13,.75)); animation: pw-emblem-in 1.4s cubic-bezier(.2,.7,.2,1) .45s both; }
+.pw-hero-emblem-halo { position: absolute; inset: -12% 4%; background: radial-gradient(ellipse at 50% 48%, rgba(124,92,255,.28), rgba(200,67,81,.12) 40%, transparent 68%); translate: calc(var(--pw-hx, 0) * 10px) calc(var(--pw-hy, 0) * 8px); transition: translate .8s cubic-bezier(.2,.7,.2,1); animation: pw-emblem-halo 1.8s ease .3s both; }
+.pw-hero-emblem-shine { position: absolute; inset: 0; background: linear-gradient(110deg, transparent 40%, rgba(255,245,235,.55) 50%, transparent 60%) no-repeat; background-size: 250% 100%; -webkit-mask: url('/assets/img/logo/logokecil.svg') center / contain no-repeat; mask: url('/assets/img/logo/logokecil.svg') center / contain no-repeat; mix-blend-mode: overlay; animation: pw-emblem-shine 1.6s ease-in-out 1.7s both; }
+@keyframes pw-emblem-in { from { opacity: 0; transform: translateY(26px) scale(.92); filter: blur(10px) drop-shadow(0 24px 40px rgba(8,8,13,.75)); } to { opacity: 1; transform: none; filter: blur(0) drop-shadow(0 24px 40px rgba(8,8,13,.75)); } }
+@keyframes pw-emblem-halo { from { opacity: 0; transform: scale(.7); } to { opacity: 1; transform: none; } }
+@keyframes pw-emblem-shine { from { background-position: 100% 0; } to { background-position: -50% 0; } }
+@media (max-width: 1050px) { .pw-hero-emblem { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+    .pw-hero-emblem { translate: 0 -50%; transition: none; }
+    .pw-hero-emblem img, .pw-hero-emblem-halo { animation: none; }
+    .pw-hero-emblem-shine { display: none; }
+}
 .pw-hero-content { position: relative; z-index: 1; padding-top: 145px; padding-bottom: 105px; }
 .pw-hero-content > * { max-width: 640px; margin-left: 0; }
 .pw-eyebrow { display: flex; align-items: center; gap: 11px; margin: 0 0 19px; color: var(--pw-gold); font: 10px/1.4 var(--pw-mono); letter-spacing: .17em; text-transform: uppercase; }

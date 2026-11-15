@@ -24,6 +24,11 @@
     <main>
         <section class="pw-hero" aria-labelledby="pw-hero-title">
             <div class="pw-hero-image" aria-hidden="true"></div>
+            <div class="pw-hero-emblem" aria-hidden="true">
+                <span class="pw-hero-emblem-halo"></span>
+                <img src="{{ asset('assets/img/logo/logokecil.svg') }}" alt="" width="1050" height="600">
+                <span class="pw-hero-emblem-shine"></span>
+            </div>
             <div class="pw-hero-content pw-container">
                 <p class="pw-eyebrow"><span></span> A world beyond the horizon</p>
                 <h1 class="pw-hero-title" id="pw-hero-title">Your legend<br>begins <em>here.</em></h1>
