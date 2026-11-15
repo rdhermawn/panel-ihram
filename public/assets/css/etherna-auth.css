@@ -44,7 +44,7 @@ body.pw-auth-site {
 .pw-auth-form select,
 .pw-auth-form textarea {
     width: 100%;
-    min-height: 44px;
+    min-height: 38px;
     border: 1px solid rgba(243, 238, 231, .19);
     border-radius: 0;
     background: rgba(8, 8, 10, .72);
@@ -55,7 +55,7 @@ body.pw-auth-site {
 
 .pw-auth-form input:not([type="checkbox"]):not([type="hidden"]),
 .pw-auth-form select,
-.pw-auth-form textarea { padding: 10px 13px; }
+.pw-auth-form textarea { padding: 7px 12px; }
 
 .pw-auth-form input::placeholder,
 .pw-auth-form textarea::placeholder { color: #aaa2a5; opacity: 1; }
