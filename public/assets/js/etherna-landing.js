@@ -80,4 +80,31 @@ if (carousel) {
     track.addEventListener('scroll', updateCarousel, { passive: true });
     window.addEventListener('resize', updateCarousel);
     updateCarousel();
+
+    if (!reduceMotion.matches && 'IntersectionObserver' in window) {
+        // Entrance: cards rise one after another the first time the section is on screen.
+        cards.forEach((card, i) => card.style.setProperty('--pw-delay', `${Math.min(i, 5) * 0.09}s`));
+        carousel.classList.add('is-armed');
+        new IntersectionObserver((entries, observer) => {
+            if (entries.some((entry) => entry.isIntersecting)) {
+                carousel.classList.add('is-in');
+                observer.disconnect();
+            }
+        }, { threshold: 0.25 }).observe(carousel);
+
+        // Depth: on mouse devices the character and the logo drift opposite ways with the cursor.
+        if (window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+            cards.forEach((card) => {
+                card.addEventListener('pointermove', (event) => {
+                    const box = card.getBoundingClientRect();
+                    card.style.setProperty('--pw-tilt-x', (((event.clientX - box.left) / box.width) * 2 - 1).toFixed(3));
+                    card.style.setProperty('--pw-tilt-y', (((event.clientY - box.top) / box.height) * 2 - 1).toFixed(3));
+                });
+                card.addEventListener('pointerleave', () => {
+                    card.style.removeProperty('--pw-tilt-x');
+                    card.style.removeProperty('--pw-tilt-y');
+                });
+            });
+        }
+    }
 }
