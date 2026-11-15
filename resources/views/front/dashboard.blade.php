@@ -7,7 +7,5 @@
     </x-slot>
 
     <x-slot name="content">
-
-        <x-hrace009::front.news-view/>
     </x-slot>
 </x-hrace009.layouts.app>
