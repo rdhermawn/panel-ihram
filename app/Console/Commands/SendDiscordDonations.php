@@ -403,11 +403,18 @@ class SendDiscordDonations extends Command
             |--------------------------------------------------------------------------
             */
 
+            $coin = (float) ($transaction->amount ?? 0);
+
+            if (config('ipaymu.double')) {
+                $coin *= 2;
+            }
+
             $sent = DiscordDonationService::send(
                 $donorName,
                 $streamerCode,
                 $amount,
-                $referenceId
+                $referenceId,
+                $coin
             );
 
 

@@ -264,7 +264,7 @@
                         <x-hrace009::label for="discord_message">{{ __('donate.ipaymu.discord_message') }}</x-hrace009::label>
                     </div>
                     <div class="mb-6 text-xs text-gray-500">
-                        Placeholder: <code>{player_name}</code> <code>{amount}</code> <code>{streamer}</code> <code>{reference_id}</code> <code>{payment_method}</code>
+                        Placeholder: <code>{player_name}</code> <code>{amount}</code> <code>{coin}</code> <code>{currency}</code> <code>{streamer}</code> <code>{reference_id}</code> <code>{payment_method}</code>
                         &mdash; {{ __('donate.ipaymu.discord_note') }}
                     </div>
 
