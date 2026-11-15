@@ -18,12 +18,10 @@
     <main class="pw-auth-main">
         <section class="pw-auth-story" aria-label="Etherna Perfect World">
             <div class="pw-auth-story-copy">
-                <p class="pw-auth-eyebrow">A WORLD OF YOUR OWN</p>
-                <h1>Find your legend<br>among the clouds.</h1>
-                <p class="pw-auth-story-text">Return to Perfect World and continue the journey waiting for you.</p>
-                <a class="pw-auth-home-link" href="{{ url('/') }}">Explore Etherna <span aria-hidden="true">↗</span></a>
+                <p class="pw-auth-story-title">@yield('story-title')</p>
+                <p class="pw-auth-story-text">@yield('story-text')</p>
+                <a class="pw-auth-home-link" href="{{ url('/') }}">Back to home</a>
             </div>
-            <span class="pw-auth-story-mark" aria-hidden="true">ETHERNA <i>✦</i> PERFECT WORLD</span>
         </section>
         <section class="pw-auth-access" aria-label="Account access">
             <div class="pw-auth-content">

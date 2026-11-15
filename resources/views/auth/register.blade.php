@@ -1,58 +1,116 @@
 @extends('website.auth-layout')
 
-@section('page-title', __('auth.form.register'))
+@section('page-title', 'Register')
+@section('story-title', 'Your first steps in Etherna.')
+@section('story-text', 'Create an account to start playing Perfect World.')
 
 @section('content')
     <div class="pw-auth-heading">
-        <p class="pw-auth-kicker">BEGIN YOUR ADVENTURE</p>
-        <h2>{{ __('auth.form.register') }}</h2>
-        <p>Create your account to join the world of Etherna.</p>
+        <h1>Register</h1>
+        <p>Create your Etherna account.</p>
     </div>
 
-    <x-hrace009::validation-errors class="pw-auth-errors" />
+    @if ($errors->any())
+        <div class="pw-auth-errors" role="alert">
+            <p>Check the highlighted fields.</p>
+            @foreach (Illuminate\Support\Arr::except($errors->getMessages(), ['name', 'email', 'phonenumber', 'password', 'password_confirmation', 'pin', 'truename', 'terms']) as $messages)
+                @foreach ($messages as $message)
+                    <p>{{ $message }}</p>
+                @endforeach
+            @endforeach
+        </div>
+    @endif
 
     <form method="POST" action="{{ route('register') }}" class="pw-auth-form">
         @csrf
 
-        <x-hrace009::input-box id="name" type="text" name="name" :value="old('name')"
-            placeholder="{{ __('auth.form.login') }}" autofocus required autocomplete="name" />
+        <div class="pw-auth-field">
+            <label for="name">Username</label>
+            <input id="name" type="text" name="name" value="{{ old('name') }}" autofocus autocomplete="username" required
+                aria-invalid="{{ $errors->has('name') ? 'true' : 'false' }}" @error('name') aria-describedby="name-error" @enderror>
+            @error('name')
+                <p id="name-error" class="pw-auth-field-error">{{ $message }}</p>
+            @enderror
+        </div>
 
-        <x-hrace009::input-box id="email" type="email" name="email" :value="old('email')"
-            placeholder="{{ __('auth.form.email') }}" required autocomplete="email" />
+        <div class="pw-auth-field">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" value="{{ old('email') }}" autocomplete="email" required
+                aria-invalid="{{ $errors->has('email') ? 'true' : 'false' }}" @error('email') aria-describedby="email-error" @enderror>
+            @error('email')
+                <p id="email-error" class="pw-auth-field-error">{{ $message }}</p>
+            @enderror
+        </div>
 
-        <x-hrace009::input-box id="phonenumber" type="phonenumber" name="phonenumber"
-            :value="old('phonenumber')" placeholder="{{ __('auth.form.phonenumber') }}" required
-            autocomplete="phonenumber" />
+        <div class="pw-auth-field">
+            <label for="phonenumber">Phone number</label>
+            <input id="phonenumber" type="tel" name="phonenumber" value="{{ old('phonenumber') }}" inputmode="tel" autocomplete="tel" required
+                aria-invalid="{{ $errors->has('phonenumber') ? 'true' : 'false' }}" @error('phonenumber') aria-describedby="phonenumber-error" @enderror>
+            @error('phonenumber')
+                <p id="phonenumber-error" class="pw-auth-field-error">{{ $message }}</p>
+            @enderror
+        </div>
 
-        <x-hrace009::input-box id="password" type="password" name="password"
-            placeholder="{{ __('auth.form.password') }}" required autocomplete="new-password" />
+        <div class="pw-auth-field">
+            <label for="password">Password</label>
+            <input id="password" type="password" name="password" autocomplete="new-password" required
+                aria-invalid="{{ $errors->has('password') ? 'true' : 'false' }}" @error('password') aria-describedby="password-error" @enderror>
+            @error('password')
+                <p id="password-error" class="pw-auth-field-error">{{ $message }}</p>
+            @enderror
+        </div>
 
-        <x-hrace009::input-box id="password_confirmation" type="password" name="password_confirmation"
-            placeholder="{{ __('auth.form.confirmPassword') }}" required autocomplete="new-password" />
+        <div class="pw-auth-field">
+            <label for="password_confirmation">Confirm password</label>
+            <input id="password_confirmation" type="password" name="password_confirmation" autocomplete="new-password" required
+                aria-invalid="{{ $errors->has('password_confirmation') ? 'true' : 'false' }}" @error('password_confirmation') aria-describedby="password_confirmation-error" @enderror>
+            @error('password_confirmation')
+                <p id="password_confirmation-error" class="pw-auth-field-error">{{ $message }}</p>
+            @enderror
+        </div>
 
         @if (!Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::twoFactorAuthentication()))
-            <x-hrace009::input-box id="pin" type="password" name="pin"
-                placeholder="{{ __('auth.form.pin') }}" required autocomplete="new-pin" />
+        <div class="pw-auth-field">
+            <label for="pin">PIN</label>
+            <input id="pin" type="password" name="pin" inputmode="numeric" autocomplete="off" required
+                aria-invalid="{{ $errors->has('pin') ? 'true' : 'false' }}" @error('pin') aria-describedby="pin-error" @enderror>
+            @error('pin')
+                <p id="pin-error" class="pw-auth-field-error">{{ $message }}</p>
+            @enderror
+        </div>
         @endif
 
-        <x-hrace009::input-box id="truename" type="text" name="truename" :value="old('truename')"
-            placeholder="{{ __('auth.form.trueName') }}" required autocomplete="truename" />
+        <div class="pw-auth-field">
+            <label for="truename">Full name</label>
+            <input id="truename" type="text" name="truename" value="{{ old('truename') }}" autocomplete="name" required
+                aria-invalid="{{ $errors->has('truename') ? 'true' : 'false' }}" @error('truename') aria-describedby="truename-error" @enderror>
+            @error('truename')
+                <p id="truename-error" class="pw-auth-field-error">{{ $message }}</p>
+            @enderror
+        </div>
 
         @if (config('pw-config.system.apps.captcha'))
             <x-hrace009::captcha />
         @endif
 
         @if (Laravel\Jetstream\Jetstream::hasTermsAndPrivacyPolicyFeature())
-            <x-hrace009::auth.tos-agree />
+            <div class="pw-auth-terms">
+                <label class="pw-auth-checkbox" for="terms">
+                    <input type="checkbox" id="terms" name="terms"
+                        aria-invalid="{{ $errors->has('terms') ? 'true' : 'false' }}" @error('terms') aria-describedby="terms-error" @enderror>
+                    <span>{!! __('I agree to the :terms_of_service and :privacy_policy', [
+                        'terms_of_service' => '<a target="_blank" href="'.route('terms.show').'">'.__('Terms of Service').'</a>',
+                        'privacy_policy' => '<a target="_blank" href="'.route('policy.show').'">'.__('Privacy Policy').'</a>',
+                    ]) !!}</span>
+                </label>
+                @error('terms')
+                    <p id="terms-error" class="pw-auth-field-error">{{ $message }}</p>
+                @enderror
+            </div>
         @endif
 
-        <x-hrace009::button type="submit" class="btn btn-primary w-full tracking-wide">
-            {{ __('auth.form.register') }}
-        </x-hrace009::button>
+        <button type="submit">Register</button>
     </form>
 
-    <p class="pw-auth-links">
-        {{ __('auth.form.registered') }}
-        <a href="{{ route('login') }}">{{ __('auth.form.login') }}</a>
-    </p>
+    <p class="pw-auth-links">Already have an account? <a href="{{ route('login') }}">Log in</a></p>
 @endsection
