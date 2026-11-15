@@ -1,4 +1,15 @@
-.pw-auth-site { min-height: 100vh; background: var(--pw-ink); }
+/* The landing's sky-and-city backdrop. Like the hero, the left (the art's own character and logo) is
+   faded out so only the sky and city show, and the middle is darkened so the form stays readable. */
+body.pw-auth-site {
+    min-height: 100vh;
+    background:
+        linear-gradient(90deg, rgba(8, 8, 13, .97) 0%, rgba(8, 8, 13, .9) 52%, rgba(8, 8, 13, .6) 72%, rgba(8, 8, 13, .25) 100%),
+        radial-gradient(ellipse 40% 60% at 50% 45%, rgba(8, 8, 13, .6), transparent 70%),
+        linear-gradient(0deg, rgba(8, 8, 13, .85), transparent 45%),
+        url('/assets/img/home-2/hero/hero-bg.jpg') right center / cover no-repeat,
+        var(--pw-ink);
+    background-attachment: fixed;
+}
 
 .pw-auth-main {
     width: min(420px, calc(100% - 40px));
@@ -71,7 +82,8 @@
 .pw-auth-form input[type="submit"],
 .pw-auth-form .btn-primary {
     width: 100%;
-    min-height: 54px;
+    min-height: 44px;
+    padding: 10px 20px;
     border: 1px solid var(--pw-red);
     border-radius: 0;
     background: var(--pw-red);
