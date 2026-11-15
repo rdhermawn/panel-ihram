@@ -1,8 +1,7 @@
 @extends('website.auth-layout')
 
 @section('page-title', 'Register')
-@section('story-title', 'Your first steps in Etherna.')
-@section('story-text', 'Create an account to start playing Perfect World.')
+@section('auth-width', 'pw-auth-main-register')
 
 @section('content')
     <div class="pw-auth-heading">
@@ -51,6 +50,7 @@
             @enderror
         </div>
 
+        <div class="pw-auth-passwords">
         <div class="pw-auth-field">
             <label for="password">Password</label>
             <input id="password" type="password" name="password" autocomplete="new-password" required
@@ -67,6 +67,7 @@
             @error('password_confirmation')
                 <p id="password_confirmation-error" class="pw-auth-field-error">{{ $message }}</p>
             @enderror
+        </div>
         </div>
 
         @if (!Laravel\Fortify\Features::enabled(Laravel\Fortify\Features::twoFactorAuthentication()))
