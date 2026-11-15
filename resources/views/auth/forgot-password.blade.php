@@ -1,16 +1,11 @@
 @extends('website.auth-layout')
 
 @section('page-title', 'Reset password')
-@section('story-title', 'Return to your account.')
-@section('story-text', 'Request a password reset link using your account email.')
 
 @section('content')
     <div class="pw-auth-heading">
         <h1>Reset password</h1>
-    </div>
-
-    <div class="pw-auth-description">
-        <x-hrace009::auth.forgot-password-description />
+        <p>Request a reset link by email.</p>
     </div>
 
     @if (session('status'))
@@ -45,4 +40,5 @@
         @endif
         <button type="submit">Send password reset link</button>
     </form>
+    <p class="pw-auth-links"><a href="{{ route('login') }}">Back to log in</a></p>
 @endsection

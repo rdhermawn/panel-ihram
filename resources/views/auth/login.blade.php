@@ -1,8 +1,6 @@
 @extends('website.auth-layout')
 
 @section('page-title', 'Log in')
-@section('story-title', 'Welcome back. Your world is waiting.')
-@section('story-text', 'Log in to return to Etherna Perfect World.')
 
 @section('content')
     <div class="pw-auth-heading">
@@ -63,12 +61,14 @@
                 <input type="checkbox" id="remember_me" name="remember">
                 <span>{{ __('auth.form.remember') }}</span>
             </label>
-            @if (Route::has('password.request'))
-                <a href="{{ route('password.request') }}">Reset password</a>
-            @endif
         </div>
 
         <button type="submit">Log in</button>
-        <p class="pw-auth-links">No account yet? <a href="{{ route('register') }}">Create one</a></p>
     </form>
+    <div class="pw-auth-links">
+        <p>No account yet? <a href="{{ route('register') }}">Create one</a></p>
+        @if (Route::has('password.request'))
+            <p><a href="{{ route('password.request') }}">Forgot your password?</a></p>
+        @endif
+    </div>
 @endsection

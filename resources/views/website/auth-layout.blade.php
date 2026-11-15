@@ -15,14 +15,7 @@
 </head>
 <body class="pw-site pw-auth-site">
     @include('website.partials.header')
-    <main class="pw-auth-main">
-        <section class="pw-auth-story" aria-label="Etherna Perfect World">
-            <div class="pw-auth-story-copy">
-                <p class="pw-auth-story-title">@yield('story-title')</p>
-                <p class="pw-auth-story-text">@yield('story-text')</p>
-                <a class="pw-auth-home-link" href="{{ url('/') }}">Back to home</a>
-            </div>
-        </section>
+    <main class="pw-auth-main @yield('auth-width')">
         <section class="pw-auth-access" aria-label="Account access">
             <div class="pw-auth-content">
                 @yield('content')
