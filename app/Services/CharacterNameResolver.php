@@ -2,7 +2,6 @@
 
 namespace App\Services;
 
-use App\Models\Player;
 use App\Models\User;
 use hrace009\PerfectWorldAPI\API;
 use Illuminate\Support\Facades\Log;
@@ -12,7 +11,7 @@ class CharacterNameResolver
     /**
      * Nama karakter untuk sebuah akun. Prioritas: karakter yang dipilih di sesi
      * (jika akun yang sama), karakter level tertinggi dari server game,
-     * lalu tabel pwp_players. Fallback ke nama akun jika tidak ada karakter.
+     * dan fallback ke nama akun jika tidak ada karakter.
      */
     public static function forUser(?int $userId): string
     {
@@ -63,17 +62,6 @@ class CharacterNameResolver
                 'user_id' => $user->ID,
                 'error' => $e->getMessage(),
             ]);
-        }
-
-        try {
-            $name = Player::where('id', '>=', $user->ID)
-                ->where('id', '<', $user->ID + 16)
-                ->orderByDesc('level')
-                ->value('name');
-            if (trim((string) $name) !== '') {
-                return trim($name);
-            }
-        } catch (\Throwable $e) {
         }
 
         return trim($user->truename ?? '') ?: (trim($user->name ?? '') ?: 'User #' . $user->ID);
