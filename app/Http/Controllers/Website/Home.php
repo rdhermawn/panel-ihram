@@ -51,6 +51,7 @@ class Home extends Controller
             'ranks' => Player::subtype('pvp')
                 ->limit(10)
                 ->get(),
+            'players' => new Player(),
 
             // TOP 10 SPENDER
             'topSpenders' => $topSpenders,

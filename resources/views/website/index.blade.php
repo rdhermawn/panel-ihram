@@ -127,16 +127,22 @@
                     <a class="pw-text-link" href="{{ route('app.ranking.player', 'pvp') }}">View all rankings <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="pw-rankings" data-reveal>
-                    <div class="pw-list-heading"><span>RANK / PLAYER</span><span>CLASS</span><span>TOTAL KILLS</span></div>
+                    <div class="pw-list-heading pw-pvp-heading"><span>#</span><span>{{ __('ranking.name') }}</span><span>{{ __('ranking.class') }}</span><span>{{ __('ranking.gender.caption') }}</span><span>{{ __('ranking.spouse.caption') }}</span><span>{{ __('ranking.type.pvp') }}</span><span>{{ __('ranking.guild') }}</span></div>
                     @forelse($ranks as $rank)
                         @php
                             $classIcons = [0 => 'blademaster', 1 => 'mage', 2 => 'psychic', 3 => 'venomancer', 4 => 'barbarian', 5 => 'assassin', 6 => 'archer', 7 => 'cleric', 8 => 'seeker', 9 => 'mystic', 10 => 'duskblade', 11 => 'stormbringer', 12 => 'technician', 13 => 'edgerunner', 14 => 'wildwalker'];
-                            $className = __('general.classes.' . $rank->cls);
+                            $classId = $rank->cls;
+                            $classKey = $classIcons[$classId] ?? 'unknown';
+                            $spouse = $rank->spouse ? $players->getPlayer($rank->spouse) : null;
                         @endphp
-                        <div class="pw-rank-row">
-                            <span class="pw-rank-player"><span class="pw-rank-number">{{ str_pad($loop->iteration, 2, '0', STR_PAD_LEFT) }}</span><span class="pw-rank-name">{{ $rank->name }}</span></span>
-                            <span class="pw-rank-class"><img src="{{ asset('img/icon/' . ($classIcons[$rank->cls] ?? 'unknown') . '.png') }}" alt="" loading="lazy">{{ $className }}</span>
-                            <strong class="pw-rank-score">{{ number_format($rank->pk_count) }}</strong>
+                        <div class="pw-rank-row pw-pvp-row">
+                            <span class="pw-rank-number">{{ $loop->iteration }}</span>
+                            <span class="pw-rank-name">{{ $rank->name }}</span>
+                            <span class="pw-rank-class" data-label="{{ __('ranking.class') }}"><img src="{{ asset('img/icon/' . $classKey . '.png') }}" alt="{{ $classKey }}" loading="lazy" title="{{ __('general.classes.' . $classId) }}"><span>{{ __('general.classes.' . $classId) }}</span></span>
+                            <span class="pw-rank-gender" data-label="{{ __('ranking.gender.caption') }}"><img src="/img/gender/{{ $rank->gender }}.png" alt="{{ $rank->gender }}" loading="lazy" title="{{ __('ranking.gender.' . $rank->gender) }}"></span>
+                            <span class="pw-rank-spouse" data-label="{{ __('ranking.spouse.caption') }}">{{ $spouse ? $spouse->name : __('ranking.spouse.4everalone') }}</span>
+                            <strong class="pw-rank-score" data-label="{{ __('ranking.type.pvp') }}">{{ $rank->pk_count }}</strong>
+                            <span class="pw-rank-faction" data-label="{{ __('ranking.guild') }}">{{ $rank->faction_name ?? '-' }}</span>
                         </div>
                     @empty
                         <p class="pw-empty pw-empty-row">No player ranking data is available yet.</p>

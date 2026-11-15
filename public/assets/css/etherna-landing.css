@@ -126,6 +126,13 @@ img { display: block; max-width: 100%; }
 .pw-rank-row, .pw-spender-row { min-height: 69px; padding: 12px 18px; border-top: 1px solid var(--pw-line); }
 .pw-list-heading + .pw-rank-row, .pw-list-heading + .pw-empty-row { border-top: 0; }
 .pw-empty-row { display: flex; min-height: 69px; align-items: center; justify-content: center; margin: 0; padding: 12px 18px; border: 0; color: var(--pw-muted); text-align: center; }
+.pw-pvp-heading, .pw-pvp-row { grid-template-columns: 26px minmax(120px, 1.15fr) minmax(150px, 1fr) 44px minmax(110px, .9fr) minmax(95px, .7fr) minmax(110px, .9fr); gap: 12px; }
+.pw-pvp-heading > :last-child { text-align: left; }
+.pw-pvp-row .pw-rank-class { gap: 8px; }
+.pw-pvp-row .pw-rank-class img { width: 24px; height: 24px; }
+.pw-rank-gender { display: flex; align-items: center; justify-content: center; }
+.pw-rank-gender img { width: 20px; height: 20px; object-fit: contain; }
+.pw-rank-spouse, .pw-rank-faction { overflow: hidden; color: var(--pw-muted); font-size: 11px; text-overflow: ellipsis; white-space: nowrap; }
 .pw-rank-player { display: flex; min-width: 0; align-items: center; gap: 17px; }
 .pw-rank-number { color: var(--pw-red-light); font: 11px/1 var(--pw-mono); }
 .pw-rank-name { overflow: hidden; font-size: 14px; font-weight: 600; text-overflow: ellipsis; white-space: nowrap; }
@@ -175,6 +182,7 @@ html.has-js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
     .pw-feature-card:first-child { grid-column: span 2; }
     .pw-feature-card:first-child p { max-width: 320px; }
     .pw-feature-card { min-height: 235px; }
+    .pw-pvp-heading, .pw-pvp-row { grid-template-columns: 24px minmax(85px, 1.1fr) minmax(95px, 1fr) 30px minmax(85px, .9fr) minmax(68px, .65fr) minmax(80px, .9fr); gap: 8px; }
 }
 @media (max-width: 760px) {
     html { scroll-padding-top: 72px; }
@@ -225,6 +233,20 @@ html.has-js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
     .pw-rank-class { gap: 5px; font-size: 10px; }
     .pw-rank-class img { width: 23px; height: 23px; }
     .pw-rank-score { font-size: 14px; }
+    .pw-pvp-heading { display: none; }
+    .pw-pvp-row { grid-template-columns: 23px minmax(0, 1fr) minmax(66px, .42fr); grid-template-areas: "rank name score" "rank class gender" "rank spouse faction"; align-items: start; gap: 10px 8px; min-height: 0; padding: 12px; }
+    .pw-pvp-row .pw-rank-number { grid-area: rank; align-self: start; padding-top: 13px; }
+    .pw-pvp-row .pw-rank-name { grid-area: name; align-self: center; }
+    .pw-pvp-row .pw-rank-class { position: relative; display: grid; grid-area: class; grid-template-columns: 20px minmax(0, 1fr); gap: 0 6px; min-width: 0; padding-top: 12px; font-size: 10px; }
+    .pw-pvp-row .pw-rank-class::before { position: absolute; top: 0; left: 0; color: var(--pw-muted); content: attr(data-label); font: 8px/1.2 var(--pw-mono); letter-spacing: .05em; }
+    .pw-pvp-row .pw-rank-class img { width: 20px; height: 20px; }
+    .pw-pvp-row .pw-rank-class > span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pw-pvp-row .pw-rank-gender, .pw-pvp-row .pw-rank-spouse, .pw-pvp-row .pw-rank-score, .pw-pvp-row .pw-rank-faction { position: relative; padding-top: 12px; font-size: 10px; }
+    .pw-pvp-row .pw-rank-gender::before, .pw-pvp-row .pw-rank-spouse::before, .pw-pvp-row .pw-rank-score::before, .pw-pvp-row .pw-rank-faction::before { position: absolute; top: 0; left: 0; color: var(--pw-muted); content: attr(data-label); font: 8px/1.2 var(--pw-mono); letter-spacing: .05em; }
+    .pw-pvp-row .pw-rank-gender { grid-area: gender; justify-self: end; padding-right: 2px; text-align: right; }
+    .pw-pvp-row .pw-rank-spouse { grid-area: spouse; }
+    .pw-pvp-row .pw-rank-score { grid-area: score; font-size: 14px; }
+    .pw-pvp-row .pw-rank-faction { grid-area: faction; text-align: right; }
     .pw-supporters-layout { grid-template-columns: 1fr; }
     .pw-supporters-note { min-height: 320px; }
     .pw-supporters-list .pw-list-heading, .pw-supporters-list .pw-spender-row { grid-template-columns: minmax(0, 1fr) minmax(75px, .55fr) minmax(95px, .7fr); }
@@ -257,6 +279,7 @@ html.has-js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
     .pw-rank-class { font-size: 9px; }
     .pw-rank-class img { width: 20px; height: 20px; }
     .pw-rank-score { font-size: 12px; }
+    .pw-pvp-row { grid-template-columns: 23px minmax(0, 1fr) minmax(64px, .4fr); gap: 10px 7px; }
     .pw-supporters-list .pw-list-heading, .pw-supporters-list .pw-spender-row { grid-template-columns: minmax(0, 1fr) minmax(62px, .52fr) minmax(85px, .7fr); }
     .pw-support-total strong { font-size: 25px; }
 }
