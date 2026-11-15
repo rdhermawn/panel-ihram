@@ -81,13 +81,14 @@ img { display: block; max-width: 100%; }
 .pw-social-button:hover { border-color: var(--pw-red); background: var(--pw-red); color: white; }
 .pw-social-button svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.5; }
 
-.pw-stats { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--pw-line); border-bottom: 1px solid var(--pw-line); }
+.pw-stats { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 1px solid var(--pw-line); border-bottom: 1px solid var(--pw-line); }
 .pw-stat { display: grid; gap: 7px; padding: 23px 24px 25px; border-left: 1px solid var(--pw-line); }
 .pw-stat:last-child { border-right: 1px solid var(--pw-line); }
 .pw-stat-value { font: 30px/1.15 var(--pw-serif); }
 .pw-stat-label { color: var(--pw-muted); font: 9px/1.4 var(--pw-mono); letter-spacing: .1em; text-transform: uppercase; }
 .pw-stat-label-online { display: flex; align-items: center; }
 .pw-stat-label-online i { width: 6px; height: 6px; margin-right: 8px; border-radius: 50%; background: #68bd89; }
+.pw-stat-label-online.is-offline i { background: var(--pw-red-light); }
 
 .pw-section { padding: 118px 0; }
 .pw-news-section { padding-top: 134px; }
@@ -243,12 +244,8 @@ html.has-js [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
     .pw-hero-actions { gap: 16px; }
     .pw-hero-divider { height: 34px; }
     .pw-social-button { width: 48px; height: 48px; }
-    .pw-stats { grid-template-columns: repeat(2, 1fr); }
-    .pw-stat { padding: 19px 15px 20px; }
-    .pw-stat:nth-child(3) { border-left: 1px solid var(--pw-line); }
-    .pw-stat:nth-child(2) { border-right: 1px solid var(--pw-line); }
-    .pw-stat:nth-child(n+3) { border-top: 1px solid var(--pw-line); }
-    .pw-stat-value { font-size: 28px; }
+    .pw-stat { padding: 19px 12px 20px; }
+    .pw-stat-value { font-size: 24px; }
     .pw-section { padding: 80px 0; }
     .pw-news-section { padding-top: 88px; }
     .pw-section-heading { align-items: flex-start; flex-direction: column; gap: 16px; margin-bottom: 27px; }

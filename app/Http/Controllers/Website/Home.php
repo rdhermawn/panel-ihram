@@ -5,7 +5,11 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Models\News;
 use App\Models\Player;
+use App\Models\Point;
+use App\Models\User;
+use hrace009\PerfectWorldAPI\API;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 
 class Home extends Controller
@@ -61,6 +65,19 @@ class Home extends Controller
             'totalMoneyAllSpenders' => $totalMoneyAllSpenders,
 
             'monthLabel' => $startOfMonth->translatedFormat('F Y'),
+
+            // Same figures as the dashboard widget. Cached for 60s: the status check
+            // waits up to 1s for the game server when it is down.
+            'serverStats' => Cache::remember('landing.server-stats', 60, static function () {
+                $online = (new API())->online;
+                $players = $online ? Point::whereNotNull('zoneid')->count() : 0;
+
+                return [
+                    'online' => $online,
+                    'players' => $players >= 100 ? $players + (int) config('pw-config.fakeonline') : $players,
+                    'accounts' => User::count('name'),
+                ];
+            }),
         ]);
     }
 }

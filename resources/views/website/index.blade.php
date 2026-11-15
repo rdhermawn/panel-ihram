@@ -42,11 +42,9 @@
         </section>
 
         <section class="pw-stats pw-container" aria-label="Server information">
-            {{-- PLACEHOLDER server metadata: replace these four values with confirmed live details. --}}
-            <div class="pw-stat"><span class="pw-stat-label pw-stat-label-online"><i aria-hidden="true"></i>Online</span><span class="pw-stat-value">1,000+</span></div>
-            <div class="pw-stat"><span class="pw-stat-label">Version</span><span class="pw-stat-value">v1.0</span></div>
-            <div class="pw-stat"><span class="pw-stat-label">Wipes</span><span class="pw-stat-value">TBA</span></div>
-            <div class="pw-stat"><span class="pw-stat-label">Region</span><span class="pw-stat-value">SEA</span></div>
+            <div class="pw-stat"><span class="pw-stat-label pw-stat-label-online {{ $serverStats['online'] ? '' : 'is-offline' }}"><i aria-hidden="true"></i>Server status</span><span class="pw-stat-value">{{ $serverStats['online'] ? 'Online' : 'Offline' }}</span></div>
+            <div class="pw-stat"><span class="pw-stat-label">Players online</span><span class="pw-stat-value">{{ number_format($serverStats['players']) }}</span></div>
+            <div class="pw-stat"><span class="pw-stat-label">Registered accounts</span><span class="pw-stat-value">{{ number_format($serverStats['accounts']) }}</span></div>
         </section>
 
         <section class="pw-section pw-news-section" id="news" aria-labelledby="news-title">
