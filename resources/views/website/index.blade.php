@@ -128,19 +128,20 @@
                 </div>
                 <div class="pw-rankings" data-reveal>
                     <div class="pw-list-heading pw-pvp-heading"><span>#</span><span>{{ __('ranking.name') }}</span><span>{{ __('ranking.class') }}</span><span>{{ __('ranking.gender.caption') }}</span><span>{{ __('ranking.spouse.caption') }}</span><span>{{ __('ranking.type.pvp') }}</span><span>{{ __('ranking.guild') }}</span></div>
+                    @php
+                        $classIcons = [0 => 'blademaster', 1 => 'mage', 2 => 'psychic', 3 => 'venomancer', 4 => 'barbarian', 5 => 'assassin', 6 => 'archer', 7 => 'cleric', 8 => 'seeker', 9 => 'mystic', 10 => 'duskblade', 11 => 'stormbringer', 12 => 'technician', 13 => 'edgerunner', 14 => 'wildwalker'];
+                    @endphp
                     @forelse($ranks as $rank)
                         @php
-                            $classIcons = [0 => 'blademaster', 1 => 'mage', 2 => 'psychic', 3 => 'venomancer', 4 => 'barbarian', 5 => 'assassin', 6 => 'archer', 7 => 'cleric', 8 => 'seeker', 9 => 'mystic', 10 => 'duskblade', 11 => 'stormbringer', 12 => 'technician', 13 => 'edgerunner', 14 => 'wildwalker'];
                             $classId = $rank->cls;
                             $classKey = $classIcons[$classId] ?? 'unknown';
-                            $spouse = $rank->spouse ? $players->getPlayer($rank->spouse) : null;
                         @endphp
                         <div class="pw-rank-row pw-pvp-row">
                             <span class="pw-rank-number">{{ $loop->iteration }}</span>
                             <span class="pw-rank-name">{{ $rank->name }}</span>
                             <span class="pw-rank-class" data-label="{{ __('ranking.class') }}"><img src="{{ asset('img/icon/' . $classKey . '.png') }}" alt="{{ $classKey }}" loading="lazy" title="{{ __('general.classes.' . $classId) }}"><span>{{ __('general.classes.' . $classId) }}</span></span>
                             <span class="pw-rank-gender" data-label="{{ __('ranking.gender.caption') }}"><img src="/img/gender/{{ $rank->gender }}.png" alt="{{ $rank->gender }}" loading="lazy" title="{{ __('ranking.gender.' . $rank->gender) }}"></span>
-                            <span class="pw-rank-spouse" data-label="{{ __('ranking.spouse.caption') }}">{{ $spouse ? $spouse->name : __('ranking.spouse.4everalone') }}</span>
+                            <span class="pw-rank-spouse" data-label="{{ __('ranking.spouse.caption') }}">{{ $spouseNames[$rank->spouse] ?? __('ranking.spouse.4everalone') }}</span>
                             <strong class="pw-rank-score" data-label="{{ __('ranking.type.pvp') }}">{{ $rank->pk_count }}</strong>
                             <span class="pw-rank-faction" data-label="{{ __('ranking.guild') }}">{{ $rank->faction_name ?? '-' }}</span>
                         </div>
@@ -155,7 +156,7 @@
             <div class="pw-container">
                 <div class="pw-section-heading" data-reveal>
                     <div><p class="pw-eyebrow"><span></span> The keepers of Etherna</p><h2 id="supporters-title">Community <em>supporters</em></h2></div>
-                    <p>{{ \Carbon\Carbon::create($tahun, $bulan, 1)->translatedFormat('F Y') }} · thank you for keeping the world alive.</p>
+                    <p>{{ $monthLabel }} · thank you for keeping the world alive.</p>
                 </div>
                 <div class="pw-supporters-layout">
                     <div class="pw-supporters-note" data-reveal>

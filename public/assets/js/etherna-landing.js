@@ -3,8 +3,8 @@ document.documentElement.classList.add('has-js');
 const preloader = document.getElementById('pw-preloader');
 const hidePreloader = () => preloader?.classList.add('is-done');
 
-window.addEventListener('load', () => window.setTimeout(hidePreloader, 180), { once: true });
-window.setTimeout(hidePreloader, 1800);
+// The script is deferred, so the DOM is ready: lift the cover quickly instead of waiting for every image.
+window.setTimeout(hidePreloader, 300);
 
 const menuButton = document.querySelector('.pw-nav-toggle');
 const mobileMenu = document.getElementById('pw-mobile-nav');
