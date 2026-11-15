@@ -3,8 +3,9 @@ document.documentElement.classList.add('has-js');
 const preloader = document.getElementById('pw-preloader');
 const hidePreloader = () => preloader?.classList.add('is-done');
 
-// The script is deferred, so the DOM is ready: lift the cover quickly instead of waiting for every image.
-window.setTimeout(hidePreloader, 300);
+// The script is deferred, so the DOM is ready: lift the cover once the name has been written in
+// (about 1s) instead of waiting for every image. Reduced motion has nothing to watch, so it goes at once.
+window.setTimeout(hidePreloader, window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 150 : 1000);
 
 const menuButton = document.querySelector('.pw-nav-toggle');
 const mobileMenu = document.getElementById('pw-mobile-nav');

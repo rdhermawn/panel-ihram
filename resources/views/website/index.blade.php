@@ -15,6 +15,7 @@
 </head>
 <body class="pw-site">
     <div id="pw-preloader" class="pw-preloader" aria-label="Loading {{ config('app.name') }}" role="status">
+        <p class="pw-loader-kicker" aria-hidden="true">Entering the world</p>
         <span class="pw-loader-mark" aria-hidden="true">{{ config('app.name') }}</span>
         <span class="pw-loader-line" aria-hidden="true"></span>
     </div>
