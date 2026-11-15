@@ -79,9 +79,9 @@ Route::group(['middleware' => 'web'], static function () {
         'as' => 'show.article.tag',
         'uses' => 'App\Http\Controllers\Website\Home@indexTags'
     ]);
-	Route::get('/download', function () {
-    return response()->file(public_path('download.html'));
-	});	
+    Route::get('/download', static function () {
+        return view('website.download');
+    });
 	Route::get('/guide', function () {
     return response()->file(public_path('guide.html'));
 	});		
