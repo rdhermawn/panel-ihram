@@ -22,13 +22,13 @@
                 @foreach($tags as $tag)<a href="{{ route('show.article.tag', $tag) }}">#{{ $tag }}</a>@endforeach
             </div>
         @endif
-        <a class="pw-news-back" href="{{ route('news.index') }}">← All news</a>
+        <a class="pw-news-back" href="{{ route('website.news') }}">← All news</a>
     </article>
 
     @if($moreNews->isNotEmpty())
         <section class="pw-section pw-more-news" aria-labelledby="more-news-title">
             <div class="pw-container">
-                <div class="pw-section-heading"><div><p class="pw-eyebrow"><span></span> Keep exploring</p><h2 id="more-news-title">More <em>news</em></h2></div><a class="pw-text-link" href="{{ route('news.index') }}">View all news <span aria-hidden="true">→</span></a></div>
+                <div class="pw-section-heading"><div><p class="pw-eyebrow"><span></span> Keep exploring</p><h2 id="more-news-title">More <em>news</em></h2></div><a class="pw-text-link" href="{{ route('website.news') }}">View all news <span aria-hidden="true">→</span></a></div>
                 <div class="pw-news-grid">
                     @foreach($moreNews as $more)
                         <article class="pw-news-card">

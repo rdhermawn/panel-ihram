@@ -66,7 +66,7 @@ Route::group(['middleware' => 'web'], static function () {
     ]);
 
     Route::get('news', [
-        'as' => 'news.index',
+        'as' => 'website.news',
         'uses' => 'App\\Http\\Controllers\\Website\\NewsController@index'
     ]);
 

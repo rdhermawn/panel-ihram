@@ -1,4 +1,4 @@
-@extends('website.news.layout', ['pageTitle' => request()->routeIs('news.index') ? 'News' : $heading . ' news'])
+@extends('website.news.layout', ['pageTitle' => request()->routeIs('website.news') ? 'News' : $heading . ' news'])
 
 @section('content')
     <section class="pw-news-hero">
@@ -13,7 +13,7 @@
         <div class="pw-container">
             <nav class="pw-news-filters" aria-label="Filter news by category">
                 <span>Categories</span>
-                <a href="{{ route('news.index') }}" @if(request()->routeIs('news.index')) aria-current="page" @endif>All news</a>
+                <a href="{{ route('website.news') }}" @if(request()->routeIs('website.news')) aria-current="page" @endif>All news</a>
                 @foreach($categories as $category)
                     <a href="{{ route('show.article.by.category', $category) }}" @if(request()->routeIs('show.article.by.category') && request()->route('category') === $category) aria-current="page" @endif>{{ __('news.category.' . $category) }}</a>
                 @endforeach

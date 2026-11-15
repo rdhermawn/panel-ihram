@@ -81,7 +81,7 @@
             <div class="pw-container">
                 <div class="pw-section-heading" data-reveal>
                     <div><p class="pw-eyebrow"><span></span> From the world</p><h2 id="news-title">Latest <em>dispatches</em></h2></div>
-                    <a class="pw-text-link" href="{{ route('news.index') }}">View all news <span aria-hidden="true">→</span></a>
+                    <a class="pw-text-link" href="{{ route('website.news') }}">View all news <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="pw-news-grid">
                     @forelse($news as $article)
@@ -200,7 +200,7 @@
             </a>
             <p>A world of your own.<br>Find your legend among the clouds.</p>
             <nav class="pw-footer-links" aria-label="Footer navigation">
-                <a href="/download">Download</a><a href="/guide">Guide</a><a href="{{ route('app.ranking.player', 'pvp') }}">Rankings</a>
+                <a href="/download">Download</a><a href="{{ route('website.news') }}">News</a><a href="{{ route('app.ranking.player', 'pvp') }}">Rankings</a>
                 @if(config('pw-config.discord'))<a href="{{ config('pw-config.discord') }}" target="_blank" rel="noopener noreferrer">Discord ↗</a>@endif
             </nav>
         </div>
