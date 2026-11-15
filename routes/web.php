@@ -65,19 +65,24 @@ Route::group(['middleware' => 'web'], static function () {
         'uses' => 'App\Http\Controllers\Website\Home@index'
     ]);
 
-    Route::get('news/{slug}', [
-        'as' => 'show.article',
-        'uses' => 'App\Http\Controllers\Website\Home@showPost'
+    Route::get('news', [
+        'as' => 'news.index',
+        'uses' => 'App\\Http\\Controllers\\Website\\NewsController@index'
     ]);
 
     Route::get('news/category/{category}', [
         'as' => 'show.article.by.category',
-        'uses' => 'App\Http\Controllers\Website\Home@indexCategory'
+        'uses' => 'App\\Http\\Controllers\\Website\\NewsController@indexCategory'
     ]);
 
     Route::get('news/tags/{tag}', [
         'as' => 'show.article.tag',
-        'uses' => 'App\Http\Controllers\Website\Home@indexTags'
+        'uses' => 'App\\Http\\Controllers\\Website\\NewsController@indexTags'
+    ]);
+
+    Route::get('news/{slug}', [
+        'as' => 'show.article',
+        'uses' => 'App\\Http\\Controllers\\Website\\NewsController@showPost'
     ]);
 	Route::get('/download', function () {
     return response()->file(public_path('download.html'));

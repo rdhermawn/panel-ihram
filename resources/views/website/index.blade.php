@@ -28,7 +28,7 @@
             <nav class="pw-nav" aria-label="Main navigation">
                 <a href="/">Home</a>
                 <a href="/download">Download</a>
-                <a href="/guide">Guide</a>
+                <a href="/news">News</a>
                 <a href="{{ route('app.ranking.player', 'pvp') }}">Rankings</a>
             </nav>
             <div class="pw-header-actions">
@@ -42,7 +42,7 @@
         <nav class="pw-mobile-nav" id="pw-mobile-nav" aria-label="Mobile navigation" hidden>
             <a href="/">Home</a>
             <a href="/download">Download</a>
-            <a href="/guide">Guide</a>
+            <a href="/news">News</a>
             <a href="{{ route('app.ranking.player', 'pvp') }}">Rankings</a>
             <a href="{{ route('login') }}">Log in</a>
             <a href="{{ route('register') }}">Create account</a>
@@ -81,7 +81,7 @@
             <div class="pw-container">
                 <div class="pw-section-heading" data-reveal>
                     <div><p class="pw-eyebrow"><span></span> From the world</p><h2 id="news-title">Latest <em>dispatches</em></h2></div>
-                    <p>News, events, and updates from the Etherna community.</p>
+                    <a class="pw-text-link" href="{{ route('news.index') }}">View all news <span aria-hidden="true">→</span></a>
                 </div>
                 <div class="pw-news-grid">
                     @forelse($news as $article)
